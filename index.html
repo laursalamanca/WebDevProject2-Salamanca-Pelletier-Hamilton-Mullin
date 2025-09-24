@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="site-banner">
@@ -21,6 +28,7 @@
         </div>
       </div>
     </header>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -67,35 +75,172 @@
       </ul>
     </nav>
 
-
+    <h2 class="montserrat"><u>WHO WE ARE AT GROWING PLACES</u></h2>
     <section class="box">
-      <div class="box-flex"></div>
-
-     
+      <div class="box-flex">
         <div class="box-text">
-          <img src="images/farming.jpg" alt="Crop Basket" style="display:block; margin:0 auto 16px auto;" />
-          
+          <br />
           <p>
-          We are a nonprofit organization that supports the health of people and the planet through the local food system.
-         </p>
-            
-         
+            We are a nonprofit organization that supports the health of people
+            and the planet through the local food system.
+          </p>
+          <img src="images/earth.png" alt="Earth Icon" />
+          <p>
+            Growing Places envisions a thriving community-based food system that
+            nourishes every member and the Earth.
+          </p>
         </div>
-       
-      </div>
 
+        <div class="box-image">
+          <img src="images/farmers.jpg" alt="Farmers" />
+        </div>
+      </div>
     </section>
-      
-    
-      <h2>OUR VALUES</h2>
-   
+
+    <hr />
+
+    <h2 class="montserrat"><u>OUR VALUES</u></h2>
+
     <section class="values-section">
-      <div class="value-box">A shared sense of caring, respect and responsibility for our community</div>
-      <div class="value-box">A commitment to be responsive to the needs and aspirations of our community</div>
-      <div class="value-box">A commitment to celebrating and reflecting our community’s richness</div>
-      <div class="value-box">A dedication to sustainable practices and to minimizing our environmental impact</div>
-      <div class="value-box">A strong appreciation for creativity, humor and fun!</div>
+      <div class="value-box">
+        <img
+          class="value-box-icon"
+          src="images/value1.png"
+          alt="Values"
+          class="values-img"
+        />
+        A shared sense of caring, respect and responsibility for our community
+      </div>
+      <div class="value-box">
+        <img
+          class="value-box-icon"
+          src="images/value2.png"
+          alt="Values"
+          class="values-img"
+        />
+        A commitment to be responsive to the needs and aspirations of our
+        community
+      </div>
+      <div class="value-box">
+        <img
+          class="value-box-icon"
+          src="images/value3.png"
+          alt="Values"
+          class="values-img"
+        />
+        A commitment to celebrating and reflecting our community’s richness
+      </div>
+      <div class="value-box">
+        <img
+          class="value-box-icon"
+          src="images/value4.png"
+          alt="Values"
+          class="values-img"
+        />
+        A dedication to sustainable practices and to minimizing our
+        environmental impact
+      </div>
+      <div class="value-box">
+        <img
+          class="value-box-icon"
+          src="images/value5.png"
+          alt="Values"
+          class="values-img"
+        />
+        A strong appreciation for creativity, humor and fun!
+      </div>
     </section>
- 
+    <hr />
+    <!-- Recent News Section -->
+    <section class="recent-news-section">
+      <h2 class="montserrat"><u>RECENT NEWS & EVENTS</u></h2>
+      <div class="news-grid">
+        <article class="news-card">
+          <img src="images/thankyou.png" alt="Thank You" class="news-img" />
+          <div class="news-body">
+            <h3>2nd Annual Farm to Brewery Event</h3>
+            <p class="news-excerpt">
+              Thank you to Wachusett Brewing Company and to everyone who joined
+              us for a fantastic night at Growing Places’ 2nd Annual Farm to
+              Brewery Event!
+            </p>
+            <a href="#" class="news-link">Read more</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img
+            src="images/wachusett.jpg"
+            alt="Members at the event"
+            class="news-img"
+          />
+          <div class="news-body">
+            <h3>Workshop Outreach</h3>
+            <p class="news-excerpt">
+              Our outreach team ran workshops on urban gardening and food access
+              strategies.
+            </p>
+            <a href="#" class="news-link">Read more</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <hr />
+
+    <section class="programs-section">
+      <h2 class="montserrat"><u>PROGRAMS</u></h2>
+      <div class="programs-grid">
+        <div class="programs-card">
+          <h2>Local Produce Home Delivery</h2>
+          <img
+            class="programs-img"
+            src="images/homedeliveryproduce.png"
+            alt="Delivery"
+          />
+          <p>
+            <b>Local produce delivery for all!</b>
+            <br />
+            <br />
+            Enjoy nourishing local produce and support our NCMA farmers with
+            your SNAP/HIP-eligible share all year long.
+          </p>
+        </div>
+        <div class="programs-card">
+          <h2>Mobile and Farmers Markets</h2>
+          <img
+            class="programs-img"
+            src="images/smallfarmersmarket.jpg"
+            alt="Farmer's Market"
+          />
+          <p>
+            <b>Shop and explore our region’s seasonal best!</b>
+            <br />
+            <br />
+            Check our calendar for this season’s mobile stops and farmers market
+            events.
+          </p>
+        </div>
+        <div class="programs-card">
+          <h2>Greening the Gateway Cities</h2>
+          <img
+            class="programs-img"
+            src="images/greeninggateway.png"
+            alt="Greening The Gateway Cities"
+          />
+          <p>
+            <b>Free shade trees in Leominster and Fitchburg</b>
+            <br />
+            <br />
+            Find out if you’re in the expanded planting zone!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer>
+      <div class="footer-inner">©2024 - Growing Places</div>
+    </footer>
   </body>
 </html>
