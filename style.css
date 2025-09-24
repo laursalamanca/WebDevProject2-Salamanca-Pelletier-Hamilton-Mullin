@@ -1,6 +1,6 @@
 ul {
   list-style: none;
-  background: #ffffff;
+  background: #234425;
   margin: 0;
   padding: 0;
 }
@@ -8,20 +8,55 @@ ul {
 ul li {
   display: inline-block;
   position: relative;
+  font-size: 20px;
 }
 
 ul li a {
   display: block;
   padding: 20px 25px;
-  color: black;
+  color: white;
   text-decoration: none;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-style: bold;
 }
 
 ul li ul.dropdown li {
   display: block;
   width: 100%;
+}
+ul li ul.dropdown li a:hover {
+  color: #76a324;
+}
+
+ul li ul.dropdown {
+  width: 100%;
+  min-width: 275px;
+  background: #234425;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a:hover {
+  font-size: 20px;
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  color: #76a324;
+}
+ul li:hover ul.dropdown {
+  display: block;
+  padding: 0px 0px;
+}
+
+ul li ul.dropdown li a {
+  text-align: left;
+  padding: 12px 20px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-style: bold;
 }
 
 h2 {
@@ -51,6 +86,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 5px solid white;
 }
 
 .site-banner h1 {
@@ -60,9 +96,11 @@ h2 {
 
 .site-banner .tagline {
   margin: 4px 0 0;
-  font-size: 0.9rem;
+  font-size: 14px;
   opacity: 0.95;
   color: white;
+  font-family: "montserrat", sans-serif;
+  font-style: bold;
 }
 
 .banner-brand {
@@ -94,30 +132,6 @@ h2 {
   }
 }
 
-ul li ul.dropdown {
-  width: 100%;
-  min-width: 275px;
-  background: #b5c694;
-  position: absolute;
-  z-index: 999;
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul li:hover {
-  background: #b5c694;
-}
-ul li:hover ul.dropdown {
-  display: block;
-  padding: 0px 0px;
-}
-
-ul li ul.dropdown li a {
-  text-align: left;
-  padding: 12px 20px;
-}
-
 /* HOME PAGE */
 .values-section {
   display: flex;
@@ -136,15 +150,30 @@ ul li ul.dropdown li a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 18px;
   font-weight: bold;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.value-box-icon {
+  display: block;
+  height: 64px;
+  width: 64px;
+  margin: 0 auto 16px;
+}
+
+.value-box:hover,
+.value-box:focus-within,
+.value-box:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
 }
 
 .box {
   max-width: 1000px;
   margin: 50px auto;
   padding: 30px;
-  background-color: #eeeae7;
+  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px #9f025a;
   text-align: center;
 }
 
@@ -154,18 +183,336 @@ ul li ul.dropdown li a {
 }
 
 .box p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  color: black;
 }
+
 .box-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 24px;
 }
+
 .box-text {
   flex: 1;
+}
+
+.box-image img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Recent News section */
+.recent-news-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.recent-news-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #76a324;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.news-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  height: 450px;
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+.news-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+.news-body {
+  padding: 14px 16px 18px;
+  flex: 1;
+}
+.news-body h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #76a324;
+  font-family: "montserrat", "Comic Sans MS", sans-serif;
+}
+.news-excerpt {
+  margin: 0 0 12px;
+  color: black;
+  line-height: 1.4;
+  font-size: 0.98rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.news-link {
+  text-decoration: none;
+  color: #0b74de;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.news-link:hover {
+  text-decoration: underline;
+}
+
+/*Our Programs (Home Page) */
+.programs-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.programs-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+  color: #76a324;
+  font-family: "montserrat", "Comic Sans", cursive;
+}
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.programs-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  padding: 10px 10px;
+}
+
+.programs-section p {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.programs-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.programs-card h2 {
+  display: inline-block;
+  background-color: rgba(35, 68, 37, 0.08);
+  color: #76a324;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* Our Team/Board Page */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
   text-align: center;
-  column-count: 1;
-  column-gap: 20px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.team-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.team-info {
+  padding: 10px;
+}
+
+.team-info h3 {
+  margin: 8px 0 4px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.team-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mission statement box */
+.mission-box {
+  max-width: 900px;
+  margin: 40px auto 80px;
+  padding: 40px 32px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #76a324, #5a7f1d);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.mission-box p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #ffffff;
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.mission-box p::before,
+.mission-box p::after {
+  content: "❝";
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+  vertical-align: top;
+  margin: 0 8px;
+}
+.mission-box p::after {
+  content: "❞";
+  vertical-align: bottom;
+}
+
+/*Imported Font*/
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: bold;
+  color: #76a324;
+}
+
+/*Footer*/
+
+footer {
+  background: #234425;
+  color: #fff;
+  padding: 40px 16px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "montserrat", "Comic Sans", cursive;
+  color: white;
+}
+
+/*Goals & Strategies*/
+.goals-strategies {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.goals-strategies h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #234425;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.list-box {
+  flex: 1 1 400px;
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #9f025a;
+  text-align: left;
+}
+
+.list-box h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #76a324;
+  text-align: center;
+  font-family: "montserrat", "Comic Sans", cursive;
+  font-style: bold;
+}
+
+.list-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.list-box ul li {
+  margin-bottom: 12px;
+  padding-left: 28px;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-style: bold;
+}
+
+.list-box ul li::before {
+  content: "✔";
+  color: #76a324;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.pdf-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pdf-message {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 8px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.pdf-image {
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.pdf-image:hover {
+  transform: scale(1.05);
 }
