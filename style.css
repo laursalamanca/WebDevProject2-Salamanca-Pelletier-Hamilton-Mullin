@@ -1,17 +1,17 @@
-ul {
+nav ul {
   list-style: none;
   background: #234425;
   margin: 0;
   padding: 0;
 }
 
-ul li {
+nav ul li {
   display: inline-block;
   position: relative;
   font-size: 20px;
 }
 
-ul li a {
+nav ul li a {
   display: block;
   padding: 20px 25px;
   color: white;
@@ -22,15 +22,15 @@ ul li a {
   font-style: bold;
 }
 
-ul li ul.dropdown li {
+nav ul li ul.dropdown li {
   display: block;
   width: 100%;
 }
-ul li ul.dropdown li a:hover {
+nav ul li ul.dropdown li a:hover {
   color: #76a324;
 }
 
-ul li ul.dropdown {
+nav ul li ul.dropdown {
   width: 100%;
   min-width: 275px;
   background: #234425;
@@ -41,18 +41,18 @@ ul li ul.dropdown {
   padding: 0;
 }
 
-ul li a:hover {
+nav ul li a:hover {
   font-size: 20px;
   transform: scale(1.1);
   transition: transform 0.2s ease;
   color: #76a324;
 }
-ul li:hover ul.dropdown {
+nav ul li:hover ul.dropdown {
   display: block;
   padding: 0px 0px;
 }
 
-ul li ul.dropdown li a {
+nav ul li ul.dropdown li a {
   text-align: left;
   padding: 12px 20px;
   font-family: "montserrat", Verdanna, sans-serif;
@@ -419,6 +419,7 @@ footer {
   line-height: 1.4;
 }
 .footer-inner {
+  display: flex;
   max-width: 1100px;
   margin: 0 auto;
   font-family: "montserrat", Verdana, cursive;
@@ -517,6 +518,30 @@ footer {
   transform: scale(1.05);
 }
 
+
+.social-media-container {
+  text-align: left;
+  align-items: left;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 150px;
+  height: 100px;
+  display: inline-flex;
+  background-color: white;
+}
+
+.social-media-container p {
+  font-size: 12px;
+  color: black;
+  margin-bottom: 8px;
+  font-family: "montserrat", Verdanna, sans-serif;
+}
+.social-media-icon {
+  width: 32px;
+  height: 32px;
+}
+
 form {
 padding: 1em;
 background: #7a7979;
@@ -537,3 +562,4 @@ width: 100%;
 padding: 0.7em;
 margin-bottom: 0.5rem;
 }
+
