@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       :root {
+        /* This is where we set up color and style variables so we can reuse them throughout the page */
         --gp-green: #2d6a4f;
         --gp-green-600: #245742;
         --gp-cream: #f6f8f5;
@@ -19,6 +20,7 @@
       }
 
       body {
+        /* This is the base styling for the page: white background, readable font, comfortable line spacing */
         background: #ffffff;
         color: var(--gp-text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
@@ -26,15 +28,15 @@
         line-height: 1.5;
       }
 
-      /* Scoped nav fix */
+      /* This is the navigation bar section */
       nav.site-nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 12px 16px;
-        display: flex;
-        gap: 18px;
-        justify-content: center;
-        flex-wrap: wrap;
+        list-style: none; /* This is removing default list bullets */
+        margin: 0; /* This is removing browser default margin */
+        padding: 12px 16px; /* This is adding space inside the nav */
+        display: flex; /* This is lining the links up in a row */
+        gap: 18px; /* This is spacing out the links */
+        justify-content: center; /* This is centering the nav links */
+        flex-wrap: wrap; /* This is letting links wrap to the next line on small screens */
         border-bottom: 1px solid var(--gp-border);
       }
       nav.site-nav li {
@@ -42,20 +44,23 @@
         padding: 0;
       }
       nav.site-nav a {
-        text-decoration: none;
+        text-decoration: none; /* This is removing the underline from links */
         color: var(--gp-text);
-        padding: 10px 14px;
-        border-radius: 999px;
-        transition: background 0.2s, color 0.2s;
+        padding: 10px 14px; /* This is making the links easier to click */
+        border-radius: 999px; /* This is giving links a rounded pill shape */
+        transition: background 0.2s, color 0.2s; /* This is adding a smooth hover effect */
       }
       nav.site-nav a:hover {
-        background: #f6f8f5;
+        background: #f6f8f5; /* This is the light hover background color */
       }
       nav.site-nav a[aria-current="page"] {
-        background: var(--gp-green);
+        background: var(
+          --gp-green
+        ); /* This is highlighting the current page in green */
         color: #fff;
       }
 
+      /* This is the big header (hero) section at the top */
       header.hero {
         background: var(--gp-cream);
         padding: 64px 24px;
@@ -65,6 +70,8 @@
         margin: 0 0 10px;
         font-size: 2.4rem;
       }
+
+      /* This is the small pill-shaped labels under the hero text */
       .pill {
         display: inline-block;
         background: #e8efe4;
@@ -74,20 +81,26 @@
         margin: 6px 4px;
         font-size: 0.9rem;
       }
+
+      /* This is the container that keeps the content centered and not too wide */
       .container {
         max-width: 1100px;
         margin: 0 auto;
         padding: 28px;
       }
+
+      /* This is the grid system for laying out cards side by side */
       .grid {
         display: grid;
         gap: 22px;
       }
       @media (min-width: 900px) {
         .grid.cols-2 {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; /* This is making two equal columns on larger screens */
         }
       }
+
+      /* This is the card style: white boxes with shadow and rounded corners */
       .card {
         background: #fff;
         border: 1px solid var(--gp-border);
@@ -95,9 +108,12 @@
         padding: 22px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       }
+
       h2 {
         margin: 4px 0 8px;
       }
+
+      /* This is the button style (calls to action) */
       .cta {
         display: inline-block;
         padding: 12px 16px;
@@ -112,15 +128,20 @@
         color: var(--gp-green);
         border-color: var(--gp-green);
       }
+
       .note {
         font-size: 0.9rem;
         color: var(--gp-muted);
       }
+
+      /* This is the footer styling at the bottom of the page */
       footer {
         margin: 48px 0 24px;
         text-align: center;
         color: var(--gp-muted);
       }
+
+      /* This is the email input box style in the subscription form */
       input[type="email"] {
         padding: 10px 12px;
         border-radius: 10px;
@@ -131,6 +152,7 @@
     </style>
   </head>
   <body>
+    <!-- This is the navigation bar -->
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -144,6 +166,7 @@
       </ul>
     </nav>
 
+    <!-- This is the big header section at the top -->
     <header class="hero">
       <h1>Farmers Markets</h1>
       <p>
@@ -153,6 +176,7 @@
       <span class="pill">WIC & Senior Coupons</span>
     </header>
 
+    <!-- This is the main content area -->
     <main class="container">
       <section class="grid cols-2">
         <div class="card">
@@ -227,6 +251,7 @@
       </section>
     </main>
 
+    <!-- This is the footer at the bottom -->
     <footer>© Growing Places</footer>
   </body>
 </html>

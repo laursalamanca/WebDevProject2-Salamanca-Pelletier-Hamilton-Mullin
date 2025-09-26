@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       :root {
+        /* This is where we define color variables and border radius so we can reuse them easily */
         --gp-green: #2d6a4f;
         --gp-cream: #f6f8f5;
         --gp-sky: #eef5fb;
@@ -15,25 +16,33 @@
         --gp-border: #e5e7eb;
         --radius: 14px;
       }
+
       body {
+        /* This is the main body style: white background, dark text, and a clean font */
         background: #ffffff;
         color: var(--gp-text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
           sans-serif;
       }
+
+      /* This is the navigation bar */
       nav ul {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
+        display: flex; /* This is putting the links in a row */
+        gap: 6px; /* This is spacing between links */
+        justify-content: center; /* This is centering the nav */
         border-bottom: 1px solid var(--gp-border);
       }
       nav a {
-        border-radius: 10px;
+        border-radius: 10px; /* This is rounding the edges of the nav links */
       }
       nav a[aria-current="page"] {
-        background: var(--gp-green);
+        background: var(
+          --gp-green
+        ); /* This is highlighting the active page in green */
         color: #fff;
       }
+
+      /* This is the big header section (hero) at the top */
       header.hero {
         background: var(--gp-sky);
         padding: 64px 24px;
@@ -43,20 +52,26 @@
         margin: 0 0 10px;
         font-size: 2.4rem;
       }
+
+      /* This is the wrapper that keeps the content centered and not too wide */
       .container {
         max-width: 1100px;
         margin: 0 auto;
         padding: 28px;
       }
+
+      /* This is the grid system to put sections/cards side by side */
       .grid {
         display: grid;
         gap: 22px;
       }
       @media (min-width: 900px) {
         .grid.cols-2 {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; /* This is splitting into two equal columns on large screens */
         }
       }
+
+      /* This is the card style: white box with shadow and rounded corners */
       .card {
         background: #fff;
         border: 1px solid var(--gp-border);
@@ -64,6 +79,8 @@
         padding: 22px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       }
+
+      /* This is the button (call to action) style */
       .cta {
         display: inline-block;
         padding: 12px 16px;
@@ -74,13 +91,19 @@
         text-decoration: none;
       }
       .cta.primary {
-        background: var(--gp-green);
+        background: var(
+          --gp-green
+        ); /* This is the solid green version of the button */
         color: #fff;
       }
+
       .note {
+        /* This is for small, muted text under cards */
         font-size: 0.9rem;
         color: var(--gp-muted);
       }
+
+      /* This is the footer at the bottom */
       footer {
         margin: 48px 0 24px;
         text-align: center;
@@ -89,6 +112,7 @@
     </style>
   </head>
   <body>
+    <!-- This is the navigation bar -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -102,11 +126,13 @@
       </ul>
     </nav>
 
+    <!-- This is the big hero section with the title and intro text -->
     <header class="hero">
       <h1>Greening the Gateway Cities</h1>
       <p>Outreach, education, and community connection to our urban forest.</p>
     </header>
 
+    <!-- This is the main content area -->
     <main class="container">
       <section class="grid cols-2">
         <div class="card">
@@ -124,21 +150,24 @@
             >Our GGCP page ↗</a
           >
           <p class="note" style="margin-top: 6px">
-            Overview aligned with GP’s GGCP info.
-            :contentReference[oaicite:4]{index=4}
+            This is where we point people to the official GP GGCP page.
           </p>
         </div>
 
         <div class="card">
           <h2>Why Urban Trees Matter</h2>
           <ul>
-            <li>Lower heating/cooling costs through shade and wind breaks</li>
-            <li>Improve air & water quality; reduce heat-island effects</li>
-            <li>Boost neighborhood health, pride, and resilience</li>
+            <li>
+              This is lowering heating/cooling costs with shade and wind breaks
+            </li>
+            <li>
+              This is improving air & water quality and reducing heat-island
+              effects
+            </li>
+            <li>This is boosting neighborhood health, pride, and resilience</li>
           </ul>
           <p class="note">
-            Benefits summarized from the MA state GGCP.
-            :contentReference[oaicite:5]{index=5}
+            This is a short explanation of why planting trees helps communities.
           </p>
         </div>
       </section>
@@ -146,8 +175,8 @@
       <section class="card">
         <h2>Get a Free Tree (Eligible Areas)</h2>
         <p>
-          Many Gateway City neighborhoods qualify for free yard trees through
-          GGCP. Availability varies by city and season.
+          This is explaining that many Gateway City neighborhoods qualify for
+          free yard trees through GGCP. Availability changes by city and season.
         </p>
         <a
           class="cta"
@@ -157,8 +186,8 @@
           >Check eligibility & sign up ↗</a
         >
         <p class="note">
-          Eligibility via the MA Urban Canopy portal.
-          :contentReference[oaicite:6]{index=6}
+          This is where we send people to check their eligibility on the
+          official site.
         </p>
       </section>
 
@@ -166,21 +195,21 @@
         <div class="card">
           <h2>Workshops & Events</h2>
           <p>
-            Watch for tree walks, planting demos, and care workshops on our
-            calendar and socials.
+            This is where we mention events like tree walks, planting demos, and
+            workshops.
           </p>
         </div>
         <div class="card">
           <h2>Questions?</h2>
           <p>
-            Email
-            <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>
-            and we’ll connect you with our outreach team.
+            This is providing an email so people can contact the outreach team:
+            <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>.
           </p>
         </div>
       </section>
     </main>
 
+    <!-- This is the footer -->
     <footer>© Growing Places</footer>
   </body>
 </html>
