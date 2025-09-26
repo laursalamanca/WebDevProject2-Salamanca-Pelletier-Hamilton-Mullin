@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Farmers Markets | Growing Places</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        /* This is where we set up color and style variables so we can reuse them throughout the page */
+        --gp-green: #2d6a4f;
+        --gp-green-600: #245742;
+        --gp-cream: #f6f8f5;
+        --gp-sky: #eef5fb;
+        --gp-warm: #fef3c7;
+        --gp-text: #1f2937;
+        --gp-muted: #6b7280;
+        --gp-border: #e5e7eb;
+        --radius: 14px;
+      }
+
+      body {
+        /* This is the base styling for the page: white background, readable font, comfortable line spacing */
+        background: #ffffff;
+        color: var(--gp-text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+          sans-serif;
+        line-height: 1.5;
+      }
+
+      /* This is the navigation bar section */
+      nav.site-nav ul {
+        list-style: none; /* This is removing default list bullets */
+        margin: 0; /* This is removing browser default margin */
+        padding: 12px 16px; /* This is adding space inside the nav */
+        display: flex; /* This is lining the links up in a row */
+        gap: 18px; /* This is spacing out the links */
+        justify-content: center; /* This is centering the nav links */
+        flex-wrap: wrap; /* This is letting links wrap to the next line on small screens */
+        border-bottom: 1px solid var(--gp-border);
+      }
+      nav.site-nav li {
+        margin: 0;
+        padding: 0;
+      }
+      nav.site-nav a {
+        text-decoration: none; /* This is removing the underline from links */
+        color: var(--gp-text);
+        padding: 10px 14px; /* This is making the links easier to click */
+        border-radius: 999px; /* This is giving links a rounded pill shape */
+        transition: background 0.2s, color 0.2s; /* This is adding a smooth hover effect */
+      }
+      nav.site-nav a:hover {
+        background: #f6f8f5; /* This is the light hover background color */
+      }
+      nav.site-nav a[aria-current="page"] {
+        background: var(
+          --gp-green
+        ); /* This is highlighting the current page in green */
+        color: #fff;
+      }
+
+      /* This is the big header (hero) section at the top */
+      header.hero {
+        background: var(--gp-cream);
+        padding: 64px 24px;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 2.4rem;
+      }
+
+      /* This is the small pill-shaped labels under the hero text */
+      .pill {
+        display: inline-block;
+        background: #e8efe4;
+        color: #134e4a;
+        padding: 6px 12px;
+        border-radius: 999px;
+        margin: 6px 4px;
+        font-size: 0.9rem;
+      }
+
+      /* This is the container that keeps the content centered and not too wide */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+
+      /* This is the grid system for laying out cards side by side */
+      .grid {
+        display: grid;
+        gap: 22px;
+      }
+      @media (min-width: 900px) {
+        .grid.cols-2 {
+          grid-template-columns: 1fr 1fr; /* This is making two equal columns on larger screens */
+        }
+      }
+
+      /* This is the card style: white boxes with shadow and rounded corners */
+      .card {
+        background: #fff;
+        border: 1px solid var(--gp-border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+
+      h2 {
+        margin: 4px 0 8px;
+      }
+
+      /* This is the button style (calls to action) */
+      .cta {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--gp-green);
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid var(--gp-green-600);
+      }
+      .cta.secondary {
+        background: #fff;
+        color: var(--gp-green);
+        border-color: var(--gp-green);
+      }
+
+      .note {
+        font-size: 0.9rem;
+        color: var(--gp-muted);
+      }
+
+      /* This is the footer styling at the bottom of the page */
+      footer {
+        margin: 48px 0 24px;
+        text-align: center;
+        color: var(--gp-muted);
+      }
+
+      /* This is the email input box style in the subscription form */
+      input[type="email"] {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--gp-border);
+        width: 100%;
+        max-width: 320px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This is the navigation bar -->
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a aria-current="page" href="farmersmarket.html">Farmers Markets</a>
+        </li>
+        <li>
+          <a href="greeninggatewaycities.html">Greening the Gateway Cities</a>
+        </li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </nav>
+
+    <!-- This is the big header section at the top -->
+    <header class="hero">
+      <h1>Farmers Markets</h1>
+      <p>
+        Fresh, local produce and community—seasonally across North Central MA.
+      </p>
+      <span class="pill">SNAP/HIP Accepted</span>
+      <span class="pill">WIC & Senior Coupons</span>
+    </header>
+
+    <!-- This is the main content area -->
+    <main class="container">
+      <section class="grid cols-2">
+        <div class="card">
+          <h2>About Our Markets</h2>
+          <p>
+            We join community markets to increase access to healthy, affordable
+            food. Meet local growers, shop seasonal fruits and veggies, and
+            learn how to make benefits like HIP go further.
+          </p>
+          <a
+            class="cta"
+            href="https://growingplaces.org/farmers-markets/"
+            target="_blank"
+            rel="noopener"
+            >Current market info ↗</a
+          >
+        </div>
+
+        <div class="card">
+          <h2>How Payments Work</h2>
+          <ul>
+            <li><strong>SNAP + HIP</strong> on eligible produce</li>
+            <li>Debit/credit welcome</li>
+            <li>WIC & Senior coupons at select markets</li>
+          </ul>
+          <a
+            class="cta secondary"
+            href="https://www.mass.gov/info-details/healthy-incentives-program-hip-new-vendor-status-list"
+            target="_blank"
+            rel="noopener"
+            >About HIP ↗</a
+          >
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Seasonal Schedule</h2>
+        <p>
+          Typical stops include Gardner plus pop-ups around Fitchburg and
+          Leominster. Check our page for the latest weekly schedule and weather
+          changes.
+        </p>
+      </section>
+
+      <section class="grid cols-2">
+        <div class="card">
+          <h2>Get Updates</h2>
+          <p>Sign up for reminders and weather alerts.</p>
+          <form
+            aria-label="Market updates"
+            onsubmit="alert('Thanks! You’re on the list.'); return false;"
+          >
+            <label for="email">Email</label><br />
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+            <br /><br />
+            <button class="cta" type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2>Questions?</h2>
+          <p>
+            Email
+            <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>
+            or visit the info table on market day.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- This is the footer at the bottom -->
+    <footer>© Growing Places</footer>
+  </body>
+</html>
