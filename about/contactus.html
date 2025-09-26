@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Growing Places</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 30px;
+      }
+      h2 {
+        text-transform: uppercase;
+      }
+      .contact-info {
+        margin-bottom: 40px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      form {
+        margin-top: 10px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+      form label {
+        display: block;
+        margin: 8px 0 4px;
+        font-weight: bold;
+      }
+      form input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+      }
+      form button {
+        background: #0073e6;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      form button:hover {
+        background: #005bb5;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <div class="section">
+        <strong>Email:</strong>
+        <a href="mailto:support@growingplaces.org">support@growingplaces.org</a
+        ><br />
+        <strong>Phone:</strong> 978-598-3723
+      </div>
+
+      <div class="section">
+        <strong>Office Location and Mailing Address:</strong><br />
+        Growing Places Garden Project<br />
+        325 Lindell Ave, Leominster, MA 01453
+      </div>
+
+      <div class="section">
+        <strong
+          >Produce Aggregation, Distribution and Processing Programs
+          Address:</strong
+        ><br />
+        62 Waterford St., Gardner, MA 01440
+      </div>
+    </div>
+
+    <div class="mailing-list">
+      <h3>Join Our Mailing List</h3>
+      <p>
+        Please share your name, telephone, and email address. We look forward to
+        hearing from you!
+      </p>
+      <form id="signupForm" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <button id="subscribeBtn" type="button">Join Mailing List</button>
+        <div
+          id="formMessage"
+          role="status"
+          aria-live="polite"
+          style="
+            display: none;
+            margin-top: 12px;
+            padding: 8px;
+            border-radius: 6px;
+          "
+        ></div>
+      </form>
+    </div>
+    <script>
+      (function () {
+        const form = document.getElementById("signupForm");
+        const btn = document.getElementById("subscribeBtn");
+        const msg = document.getElementById("formMessage");
+
+        // Prevent the form from being submitted by Enter or any other default action
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+        });
+
+        function showMessage(text, isError) {
+          msg.textContent = text;
+          msg.style.display = "block";
+          msg.style.background = isError ? "#ffecec" : "#e6f7e6";
+          msg.style.border = isError
+            ? "1px solid #f1c0c0"
+            : "1px solid #b9e4b9";
+          msg.style.color = isError ? "#4a0000" : "#064006";
+        }
+
+        btn.addEventListener("click", function () {
+          const name = form.querySelector("#name");
+          const phone = form.querySelector("#phone");
+          const email = form.querySelector("#email");
+
+          // Basic required-field validation
+          if (
+            !name.value.trim() ||
+            !phone.value.trim() ||
+            !email.value.trim()
+          ) {
+            showMessage(
+              "Please complete all required fields before joining the mailing list.",
+              true
+            );
+            return;
+          }
+
+          // Show success message and clear the fields
+          showMessage(
+            "Thanks — your information has been recorded locally. Thank you for joining our mailing list!",
+            false
+          );
+          // Clear inputs
+          name.value = "";
+          phone.value = "";
+          email.value = "";
+          // move focus back to the first field
+          name.focus();
+
+          // Hide message after 6 seconds
+          setTimeout(() => {
+            msg.style.display = "none";
+          }, 6000);
+        });
+      })();
+    </script>
+  </body>
+</html>
