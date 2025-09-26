@@ -3,96 +3,167 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Donate</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Donate | Growing Places</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --gp-green: #2d6a4f;
+        --gp-warm: #fff7ed;
+        --gp-text: #1f2937;
+        --gp-muted: #6b7280;
+        --gp-border: #e5e7eb;
+        --radius: 14px;
+      }
+      body {
+        background: #ffffff;
+        color: var(--gp-text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+          sans-serif;
+      }
+      nav ul {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        border-bottom: 1px solid var(--gp-border);
+      }
+      nav a {
+        border-radius: 10px;
+      }
+      nav a[aria-current="page"] {
+        background: var(--gp-green);
+        color: #fff;
+      }
+      header.hero {
+        background: var(--gp-warm);
+        padding: 64px 24px;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 2.4rem;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--gp-border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        margin: 18px 0;
+      }
+      .grid {
+        display: grid;
+        gap: 22px;
+      }
+      @media (min-width: 900px) {
+        .grid.cols-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .cta {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--gp-green);
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid #245742;
+      }
+      .note {
+        font-size: 0.9rem;
+        color: var(--gp-muted);
+      }
+      address {
+        font-style: normal;
+        line-height: 1.6;
+      }
+      footer {
+        margin: 48px 0 24px;
+        text-align: center;
+        color: var(--gp-muted);
+      }
+    </style>
   </head>
   <body>
-    <!-- NAV -->
-    <ul>
-      <li><a href="farmersmarket.html">Farmers Markets</a></li>
-      <li>
-        <a href="greeningggatewaycities.html">Greening the Gateway Cities</a>
-      </li>
-      <li><a href="donate.html">Donate</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farmersmarket.html">Farmers Markets</a></li>
+        <li>
+          <a href="greeninggatewaycities.html">Greening the Gateway Cities</a>
+        </li>
+        <li><a aria-current="page" href="donate.html">Donate</a></li>
+      </ul>
+    </nav>
 
-    <!-- HERO -->
-    <section class="site-banner">
-      <div class="banner-brand">
-        <div class="logo-block">
-          <img
-            class="banner-logo"
-            src="images/farming.jpg"
-            alt="Donate Banner"
-          />
-          <p class="tagline">Fuel food access & greener streets</p>
-        </div>
-      </div>
-    </section>
+    <header class="hero">
+      <h1>Support Our Work</h1>
+      <p>
+        Your gift powers food access, education, and greener neighborhoods
+        across North Central MA.
+      </p>
+    </header>
 
-    <h2>Donate</h2>
-
-    <!-- IMPACT LEVELS -->
-    <section class="values-section">
-      <div class="value-box">
-        <strong>$25</strong><br />Seeds & soil for a garden bed
-      </div>
-      <div class="value-box">
-        <strong>$100</strong><br />SNAP/HIP outreach at a market
-      </div>
-      <div class="value-box">
-        <strong>$300</strong><br />Supplies to plant a street tree
-      </div>
-    </section>
-
-    <!-- DONATION FORM -->
-    <section class="box" id="give-now">
-      <h2>Give Online</h2>
-      <div class="box-text">
-        <form
-          onsubmit="event.preventDefault(); alert('Demo only — no live payment.');"
+    <main class="container">
+      <section class="card">
+        <h2>Give Online</h2>
+        <p>Make a secure one-time or monthly donation in minutes.</p>
+        <!-- Replace # with your group’s real donation URL -->
+        <a
+          class="cta"
+          href="#"
+          onclick="alert('Replace this with your donation link.'); return false;"
+          >Donate Now</a
         >
-          <p>
-            <label
-              >Amount:
-              <select>
-                <option>$15</option>
-                <option>$25</option>
-                <option>$50</option>
-                <option>$100</option>
-                <option>$250</option>
-                <option>Custom</option>
-              </select>
-            </label>
-          </p>
-          <p>
-            <label><input type="checkbox" /> Make this a monthly gift</label>
-          </p>
-          <p><button type="submit">Donate</button></p>
-        </form>
-        <p>
-          <em>Questions?</em> <a href="#">Email our team</a> or call (978)
-          555-0123.
+        <p class="note">
+          Wording/layout inspired by GP’s donate section.
+          :contentReference[oaicite:7]{index=7}
         </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- OTHER WAYS TO GIVE -->
-    <section class="values-section">
-      <div class="value-box">
-        <strong>Mail a Check</strong><br />
-        Growing Places (Class Project)<br />
-        123 Garden Way<br />
-        Fitchburg, MA 01420
-      </div>
-      <div class="value-box">
-        <strong>Employer Match</strong><br />
-        We’ll help with your company’s matching gift paperwork.
-      </div>
-      <div class="value-box">
-        <strong>In-Kind & Volunteer</strong><br />
-        Donate tools, market supplies, or volunteer as a group.
-      </div>
-    </section>
+      <section class="grid cols-2">
+        <div class="card">
+          <h2>Other Ways to Give</h2>
+          <ul>
+            <li>
+              <strong>Monthly giving</strong> for steady year-round support
+            </li>
+            <li><strong>Employer match</strong> to double your impact</li>
+            <li><strong>In-kind</strong> donations (tools, seeds, printing)</li>
+            <li><strong>Tribute gifts</strong> to honor someone special</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Mail a Check</h2>
+          <p>
+            Prefer to give by mail? Include your name, email, and “Donation” in
+            the memo.
+          </p>
+          <address>
+            Growing Places<br />
+            PO Box 123<br />
+            North Central, MA 00000
+          </address>
+          <p class="note">
+            Swap in the organization’s real address if available.
+          </p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Questions?</h2>
+        <p>
+          Email
+          <a href="mailto:info@growingplaces.org">info@growingplaces.org</a> and
+          we’ll help with receipts, matching, or in-kind gifts.
+        </p>
+      </section>
+    </main>
+
+    <footer>© Growing Places</footer>
   </body>
 </html>

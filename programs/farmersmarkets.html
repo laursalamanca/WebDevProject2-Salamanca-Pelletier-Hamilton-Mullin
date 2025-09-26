@@ -3,102 +3,230 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Programs – Farmers Markets</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Farmers Markets | Growing Places</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --gp-green: #2d6a4f;
+        --gp-green-600: #245742;
+        --gp-cream: #f6f8f5;
+        --gp-sky: #eef5fb;
+        --gp-warm: #fef3c7;
+        --gp-text: #1f2937;
+        --gp-muted: #6b7280;
+        --gp-border: #e5e7eb;
+        --radius: 14px;
+      }
+
+      body {
+        background: #ffffff;
+        color: var(--gp-text);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+          sans-serif;
+        line-height: 1.5;
+      }
+
+      /* Scoped nav fix */
+      nav.site-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 12px 16px;
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-bottom: 1px solid var(--gp-border);
+      }
+      nav.site-nav li {
+        margin: 0;
+        padding: 0;
+      }
+      nav.site-nav a {
+        text-decoration: none;
+        color: var(--gp-text);
+        padding: 10px 14px;
+        border-radius: 999px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav.site-nav a:hover {
+        background: #f6f8f5;
+      }
+      nav.site-nav a[aria-current="page"] {
+        background: var(--gp-green);
+        color: #fff;
+      }
+
+      header.hero {
+        background: var(--gp-cream);
+        padding: 64px 24px;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 2.4rem;
+      }
+      .pill {
+        display: inline-block;
+        background: #e8efe4;
+        color: #134e4a;
+        padding: 6px 12px;
+        border-radius: 999px;
+        margin: 6px 4px;
+        font-size: 0.9rem;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 28px;
+      }
+      .grid {
+        display: grid;
+        gap: 22px;
+      }
+      @media (min-width: 900px) {
+        .grid.cols-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--gp-border);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      }
+      h2 {
+        margin: 4px 0 8px;
+      }
+      .cta {
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 12px;
+        background: var(--gp-green);
+        color: #fff;
+        text-decoration: none;
+        border: 1px solid var(--gp-green-600);
+      }
+      .cta.secondary {
+        background: #fff;
+        color: var(--gp-green);
+        border-color: var(--gp-green);
+      }
+      .note {
+        font-size: 0.9rem;
+        color: var(--gp-muted);
+      }
+      footer {
+        margin: 48px 0 24px;
+        text-align: center;
+        color: var(--gp-muted);
+      }
+      input[type="email"] {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid var(--gp-border);
+        width: 100%;
+        max-width: 320px;
+      }
+    </style>
   </head>
   <body>
-    <!-- SIMPLE NAV (uses your ul/li styles) -->
-    <ul>
-      <li><a href="farmersmarket.html">Farmers Markets</a></li>
-      <li><a href="greening-gateway.html">Greening the Gateway Cities</a></li>
-      <li><a href="donate.html">Donate</a></li>
-    </ul>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a aria-current="page" href="farmersmarket.html">Farmers Markets</a>
+        </li>
+        <li>
+          <a href="greeninggatewaycities.html">Greening the Gateway Cities</a>
+        </li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+    </nav>
 
-    <!-- HERO (uses .site-banner and your farming.jpg) -->
-    <section class="site-banner">
-      <div class="banner-brand">
-        <div class="logo-block">
-          <img
-            class="banner-logo"
-            src="images/farming.jpg"
-            alt="Farmers Market Banner"
-          />
-          <p class="tagline">Fresh food • Local farms • Community</p>
-        </div>
-      </div>
-    </section>
+    <header class="hero">
+      <h1>Farmers Markets</h1>
+      <p>
+        Fresh, local produce and community—seasonally across North Central MA.
+      </p>
+      <span class="pill">SNAP/HIP Accepted</span>
+      <span class="pill">WIC & Senior Coupons</span>
+    </header>
 
-    <h2>Farmers Markets</h2>
-
-    <!-- PILLARS -->
-    <section class="values-section">
-      <div class="value-box">Accepts SNAP/EBT & HIP</div>
-      <div class="value-box">Local Growers & Makers</div>
-      <div class="value-box">Family-Friendly Activities</div>
-    </section>
-
-    <!-- OVERVIEW -->
-    <section class="box">
-      <h2>How Our Markets Work</h2>
-      <div class="box-flex">
-        <div class="box-text">
+    <main class="container">
+      <section class="grid cols-2">
+        <div class="card">
+          <h2>About Our Markets</h2>
           <p>
-            Our seasonal markets bring affordable, in-season produce to
-            neighborhoods while supporting regional farms. We welcome multiple
-            payment methods to keep food access equitable.
+            We join community markets to increase access to healthy, affordable
+            food. Meet local growers, shop seasonal fruits and veggies, and
+            learn how to make benefits like HIP go further.
           </p>
-          <p>
-            <strong>Season:</strong> Late spring – early fall<br />
-            <strong>Payments:</strong> Cash, credit, SNAP/EBT, HIP, WIC, Senior
-            FMNP<br />
-            <strong>Access:</strong> Centrally located, ADA-friendly, near bus
-            routes
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHEDULE -->
-    <section class="box" id="schedule">
-      <h2>Market Schedule</h2>
-      <div class="box-text">
-        <p>
-          <strong>Downtown Fitchburg:</strong> Thursdays, 3–6 PM — arts & kids’
-          activities
-        </p>
-        <p>
-          <strong>Leominster Common:</strong> Saturdays, 9 AM–1 PM — chef demos
-          monthly
-        </p>
-        <p>
-          <strong>Mobile Pop-Ups:</strong> Rotating locations — follow social
-          for updates
-        </p>
-        <p>
-          <em
-            >EBT & HIP welcome. Spend SNAP and earn extra fruits & veggies with
-            HIP.</em
+          <a
+            class="cta"
+            href="https://growingplaces.org/farmers-markets/"
+            target="_blank"
+            rel="noopener"
+            >Current market info ↗</a
           >
-        </p>
-      </div>
-    </section>
+        </div>
 
-    <!-- VENDOR / VOLUNTEER / TRANSIT -->
-    <section class="values-section">
-      <div class="value-box">
-        <strong>Vendors</strong><br />
-        Growers, baked goods, culturally rooted foods —
-        <a href="#">apply here</a>.
-      </div>
-      <div class="value-box">
-        <strong>Volunteer</strong><br />
-        Help with set-up, welcome table, or SNAP/HIP outreach —
-        <a href="#">sign up</a>.
-      </div>
-      <div class="value-box">
-        <strong>Getting There</strong><br />
-        Free street parking after 5 PM. Near bus routes 1 & 3.
-      </div>
-    </section>
+        <div class="card">
+          <h2>How Payments Work</h2>
+          <ul>
+            <li><strong>SNAP + HIP</strong> on eligible produce</li>
+            <li>Debit/credit welcome</li>
+            <li>WIC & Senior coupons at select markets</li>
+          </ul>
+          <a
+            class="cta secondary"
+            href="https://www.mass.gov/info-details/healthy-incentives-program-hip-new-vendor-status-list"
+            target="_blank"
+            rel="noopener"
+            >About HIP ↗</a
+          >
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Seasonal Schedule</h2>
+        <p>
+          Typical stops include Gardner plus pop-ups around Fitchburg and
+          Leominster. Check our page for the latest weekly schedule and weather
+          changes.
+        </p>
+      </section>
+
+      <section class="grid cols-2">
+        <div class="card">
+          <h2>Get Updates</h2>
+          <p>Sign up for reminders and weather alerts.</p>
+          <form
+            aria-label="Market updates"
+            onsubmit="alert('Thanks! You’re on the list.'); return false;"
+          >
+            <label for="email">Email</label><br />
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+            <br /><br />
+            <button class="cta" type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2>Questions?</h2>
+          <p>
+            Email
+            <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>
+            or visit the info table on market day.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>© Growing Places</footer>
   </body>
 </html>
