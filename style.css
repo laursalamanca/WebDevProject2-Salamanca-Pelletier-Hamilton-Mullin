@@ -544,7 +544,7 @@ footer {
 
 form {
 padding: 1em;
-background: #7a7979;
+background: #444343;
 border: 1px solid rgb(56, 54, 54);
 margin: 2rem auto auto auto;
 max-width: 600px;
@@ -553,13 +553,23 @@ border-radius: 5px;
 overflow: hidden;
 }
 form input {
-margin-bottom: 1rem;
 background: white;
-border: 1px solid darkgray;
+border: 1px solid rgb(141, 141, 141);
+width: 80%;
+display: block;
 }
 input {
 width: 100%;
 padding: 0.7em;
 margin-bottom: 0.5rem;
 }
+label{
+  font-size: larger;
+  color: white;
+}
 
+button{
+  padding: 10px 20px;
+  width: 100%;
+  
+}
