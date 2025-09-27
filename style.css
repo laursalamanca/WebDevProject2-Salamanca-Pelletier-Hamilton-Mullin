@@ -1,17 +1,17 @@
-ul {
+nav ul {
   list-style: none;
   background: #234425;
   margin: 0;
   padding: 0;
 }
 
-ul li {
+nav ul li {
   display: inline-block;
   position: relative;
   font-size: 20px;
 }
 
-ul li a {
+nav ul li a {
   display: block;
   padding: 20px 25px;
   color: white;
@@ -22,15 +22,15 @@ ul li a {
   font-style: bold;
 }
 
-ul li ul.dropdown li {
+nav ul li ul.dropdown li {
   display: block;
   width: 100%;
 }
-ul li ul.dropdown li a:hover {
+nav ul li ul.dropdown li a:hover {
   color: #76a324;
 }
 
-ul li ul.dropdown {
+nav ul li ul.dropdown {
   width: 100%;
   min-width: 275px;
   background: #234425;
@@ -41,18 +41,18 @@ ul li ul.dropdown {
   padding: 0;
 }
 
-ul li a:hover {
+nav ul li a:hover {
   font-size: 20px;
   transform: scale(1.1);
   transition: transform 0.2s ease;
   color: #76a324;
 }
-ul li:hover ul.dropdown {
+nav ul li:hover ul.dropdown {
   display: block;
   padding: 0px 0px;
 }
 
-ul li ul.dropdown li a {
+nav ul li ul.dropdown li a {
   text-align: left;
   padding: 12px 20px;
   font-family: "montserrat", Verdanna, sans-serif;
@@ -230,7 +230,7 @@ h2 {
   display: flex;
   flex-direction: column;
   transition: transform 200ms ease, box-shadow 200ms ease;
-  height: 450px;
+  height: 500px;
 }
 .news-card:hover {
   transform: translateY(-6px);
@@ -238,7 +238,7 @@ h2 {
 }
 .news-img {
   width: 100%;
-  height: 250px;
+  height: 350px;
   object-fit: cover;
   display: block;
 }
@@ -264,6 +264,7 @@ h2 {
   color: #0b74de;
   font-weight: 600;
   font-size: 0.95rem;
+  font-family: "montserrat", Verdana, sans-serif;
 }
 .news-link:hover {
   text-decoration: underline;
@@ -419,10 +420,26 @@ footer {
   line-height: 1.4;
 }
 .footer-inner {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
   font-family: "montserrat", Verdana, cursive;
   color: white;
+}
+
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-center p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: "montserrat", Verdana, "Times New Roman", Times, serif;
 }
 
 /*Goals & Strategies*/
@@ -515,4 +532,107 @@ footer {
 
 .pdf-image:hover {
   transform: scale(1.05);
+}
+
+.social-media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.social-media-container p {
+  font-size: 12px;
+  color: black;
+  margin: 0 0 8px;
+  font-family: "montserrat", Verdana, sans-serif;
+}
+.social-media-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.social-media-icons {
+  display: flex;
+  gap: 20px;
+}
+
+form {
+  padding: 1em;
+  background: #444343;
+  border: 1px solid rgb(56, 54, 54);
+  margin: 2rem auto auto auto;
+  max-width: 600px;
+  padding: 1em;
+  border-radius: 5px;
+  overflow: hidden;
+}
+form input {
+  background: white;
+  border: 1px solid rgb(141, 141, 141);
+  width: 80%;
+  display: block;
+}
+input {
+  width: 100%;
+  padding: 0.7em;
+  margin-bottom: 0.5rem;
+}
+label {
+  font-size: larger;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+hr.gradient-hr {
+  border: none;
+  height: 2px;
+  width: 60%;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, black, transparent);
+}
+
+.team-photo-container {
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+.team-photo {
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team-caption {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+  font-family: "montserrat", Verdanna, sans-serif;
+}
+
+.team-intro {
+  max-width: 900px;
+  margin: 50px auto 30px auto;
+  padding: 25px 30px;
+  border-left: 6px solid #9f025a;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "montserrat", Verdanna, sans-serif;
 }
