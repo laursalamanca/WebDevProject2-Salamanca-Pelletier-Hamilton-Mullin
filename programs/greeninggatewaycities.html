@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Greening the Gateway Cities | Growing Places</title>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- This is the link to the main stylesheet (root-level) -->
+    <link rel="stylesheet" href="../style.css" />
+
     <style>
       :root {
         /* This is where we define color variables and border radius so we can reuse them easily */
@@ -23,22 +26,33 @@
         color: var(--gp-text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
           sans-serif;
+        line-height: 1.6;
+        margin: 0;
       }
 
       /* This is the navigation bar */
       nav ul {
-        display: flex; /* This is putting the links in a row */
+        /* This is putting the links in a row and centering them */
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem;
+        display: flex;
         gap: 6px; /* This is spacing between links */
         justify-content: center; /* This is centering the nav */
         border-bottom: 1px solid var(--gp-border);
+        background: #fff;
       }
       nav a {
-        border-radius: 10px; /* This is rounding the edges of the nav links */
+        /* This is rounding the edges of the nav links */
+        display: inline-block;
+        padding: 10px 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: var(--gp-text);
       }
       nav a[aria-current="page"] {
-        background: var(
-          --gp-green
-        ); /* This is highlighting the active page in green */
+        /* This is highlighting the active page in green */
+        background: var(--gp-green);
         color: #fff;
       }
 
@@ -91,9 +105,8 @@
         text-decoration: none;
       }
       .cta.primary {
-        background: var(
-          --gp-green
-        ); /* This is the solid green version of the button */
+        /* This is the solid green version of the button */
+        background: var(--gp-green);
         color: #fff;
       }
 
@@ -113,16 +126,31 @@
   </head>
   <body>
     <!-- This is the navigation bar -->
-    <nav>
+    <nav aria-label="Primary">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="farmersmarket.html">Farmers Markets</a></li>
+        <!-- This is the Home link back to the root index -->
+        <li><a href="../index.html">Home</a></li>
+
+        <!-- This is the Programs dropdown equivalent (flat for this page) -->
+        <li>
+          <a href="producehomedeliverypickup.html"
+            >Produce Home Delivery &amp; Pick-Up</a
+          >
+        </li>
+        <li><a href="mobilemarkets.html">Mobile Market</a></li>
+
+        <!-- This is the Farmers Markets link (same folder, plural filename) -->
+        <li><a href="farmersmarkets.html">Farmers Markets</a></li>
+
+        <!-- This is the current page link highlighted -->
         <li>
           <a aria-current="page" href="greeninggatewaycities.html"
             >Greening the Gateway Cities</a
           >
         </li>
-        <li><a href="donate.html">Donate</a></li>
+
+        <!-- This is the Donate link back at the root -->
+        <li><a href="../donate.html">Donate</a></li>
       </ul>
     </nav>
 
@@ -134,6 +162,7 @@
 
     <!-- This is the main content area -->
     <main class="container">
+      <!-- This is the section that explains what we do and why trees matter -->
       <section class="grid cols-2">
         <div class="card">
           <h2>What We Do</h2>
@@ -150,6 +179,7 @@
             >Our GGCP page ↗</a
           >
           <p class="note" style="margin-top: 6px">
+            <!-- This is where we point people to the official GP GGCP page -->
             This is where we point people to the official GP GGCP page.
           </p>
         </div>
@@ -158,51 +188,62 @@
           <h2>Why Urban Trees Matter</h2>
           <ul>
             <li>
-              This is lowering heating/cooling costs with shade and wind breaks
+              <!-- This is lowering heating/cooling costs with shade and wind breaks -->
+              Lower heating/cooling costs with shade and wind breaks
             </li>
             <li>
-              This is improving air & water quality and reducing heat-island
-              effects
+              <!-- This is improving air & water quality and reducing heat-island effects -->
+              Improve air &amp; water quality and reduce heat-island effects
             </li>
-            <li>This is boosting neighborhood health, pride, and resilience</li>
+            <li>
+              <!-- This is boosting neighborhood health, pride, and resilience -->
+              Boost neighborhood health, pride, and resilience
+            </li>
           </ul>
           <p class="note">
-            This is a short explanation of why planting trees helps communities.
+            <!-- This is a short explanation of why planting trees helps communities -->
+            Planting trees provides lasting environmental and social benefits.
           </p>
         </div>
       </section>
 
+      <!-- This is the section about free trees -->
       <section class="card">
         <h2>Get a Free Tree (Eligible Areas)</h2>
         <p>
-          This is explaining that many Gateway City neighborhoods qualify for
-          free yard trees through GGCP. Availability changes by city and season.
+          <!-- This is explaining that many Gateway City neighborhoods qualify for free yard trees through GGCP -->
+          Many Gateway City neighborhoods qualify for free yard trees through
+          GGCP. Availability changes by city and season.
         </p>
         <a
           class="cta"
           href="https://www.maurbancanopy.org/"
           target="_blank"
           rel="noopener"
-          >Check eligibility & sign up ↗</a
+          >Check eligibility &amp; sign up ↗</a
         >
         <p class="note">
+          <!-- This is where we send people to check their eligibility on the official site -->
           This is where we send people to check their eligibility on the
           official site.
         </p>
       </section>
 
+      <!-- This is the section for workshops and contact info -->
       <section class="grid cols-2">
         <div class="card">
-          <h2>Workshops & Events</h2>
+          <h2>Workshops &amp; Events</h2>
           <p>
-            This is where we mention events like tree walks, planting demos, and
-            workshops.
+            <!-- This is where we mention events like tree walks, planting demos, and workshops -->
+            Attend events like tree walks, planting demos, and workshops to
+            learn and connect.
           </p>
         </div>
         <div class="card">
           <h2>Questions?</h2>
           <p>
-            This is providing an email so people can contact the outreach team:
+            <!-- This is providing an email so people can contact the outreach team -->
+            Email our outreach team at
             <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>.
           </p>
         </div>

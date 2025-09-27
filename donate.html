@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Donate | Growing Places</title>
+
+    <!-- This is the link to the main stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
     <style>
       :root {
         /* This is where we define color variables and radius so we can reuse them in styles */
@@ -22,6 +25,7 @@
         color: var(--gp-text);
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
           sans-serif;
+        margin: 0;
       }
 
       /* This is the navigation bar */
@@ -30,9 +34,17 @@
         gap: 6px; /* This is spacing between each link */
         justify-content: center; /* This is centering the links */
         border-bottom: 1px solid var(--gp-border);
+        list-style: none;
+        margin: 0;
+        padding: 0.5rem;
+        background: #fff;
       }
       nav a {
         border-radius: 10px; /* This is rounding the edges of nav links */
+        text-decoration: none;
+        color: var(--gp-text);
+        padding: 10px 14px;
+        display: inline-block;
       }
       nav a[aria-current="page"] {
         background: var(
@@ -115,11 +127,20 @@
     <!-- This is the navigation bar -->
     <nav>
       <ul>
+        <!-- This is the Home link -->
         <li><a href="index.html">Home</a></li>
-        <li><a href="farmersmarket.html">Farmers Markets</a></li>
+
+        <!-- This is the Farmers Markets link (plural + programs folder) -->
+        <li><a href="programs/farmersmarkets.html">Farmers Markets</a></li>
+
+        <!-- This is the Greening the Gateway Cities link -->
         <li>
-          <a href="greeninggatewaycities.html">Greening the Gateway Cities</a>
+          <a href="programs/greeninggatewaycities.html"
+            >Greening the Gateway Cities</a
+          >
         </li>
+
+        <!-- This is the Donate link (active page) -->
         <li><a aria-current="page" href="donate.html">Donate</a></li>
       </ul>
     </nav>
