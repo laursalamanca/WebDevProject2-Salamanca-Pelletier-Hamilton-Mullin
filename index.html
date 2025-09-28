@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <!-- Inline fixes (safe + scoped). Keeps images contained and footer icons small. -->
+    <!-- Inline fixes scoped to the homepage nav/dropdowns -->
     <style>
       /* base */
       * {
@@ -57,7 +57,14 @@
         opacity: 0.9;
       }
 
-      /* --- This is the main nav --- */
+      /* --- NAV (homepage-scoped) --- */
+      nav {
+        position: relative;
+        z-index: 100;
+      }
+      nav * {
+        font-family: "Montserrat", Verdana, sans-serif;
+      }
       nav ul {
         list-style: none;
         margin: 0;
@@ -66,34 +73,53 @@
         gap: 6px;
         justify-content: center;
         border-bottom: 1px solid #e5e7eb;
+        overflow: visible; /* let dropdowns extend */
       }
       nav > ul > li {
         position: relative;
       }
-      nav a {
+      nav > ul > li > a {
         display: block;
         padding: 14px 18px;
         text-decoration: none;
-        color: #1f2937;
+        color: #fff; /* keep top links white on your green bar */
+        font-weight: 700;
+        line-height: 1.2;
       }
-      nav a:hover {
-        background: #f6f8f5;
-      }
-      nav .dropdown {
+
+      /* DROPDOWN: make wide enough, prevent wrapping, ensure contrast */
+      nav > ul > li > ul.dropdown {
         position: absolute;
         left: 0;
         top: 100%;
-        background: #fff;
-        border: 1px solid #e5e7eb;
-        min-width: 220px;
+        background: #234425; /* your dark green */
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: max-content; /* grow to the longest item */
+        min-width: 420px; /* fits: "Produce Home Delivery & Pick-Up" */
+        max-width: calc(100vw - 32px); /* never overflow the viewport */
+        white-space: nowrap; /* keep each item on one line */
         display: none;
-        z-index: 10;
+        z-index: 1000;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
       }
-      nav li:hover > .dropdown {
+      nav li:hover > ul.dropdown {
         display: block;
       }
-      nav .dropdown li a {
-        white-space: nowrap;
+
+      /* dropdown items */
+      nav > ul > li > ul.dropdown > li > a {
+        display: block;
+        padding: 14px 18px;
+        color: #ffffff !important; /* readable on dark bg */
+        font-weight: 700;
+        text-decoration: none;
+      }
+      /* highlight on hover without resizing (prevents clipping) */
+      nav > ul > li > ul.dropdown > li > a:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #cfe9db !important;
+        transform: none !important;
+        font-size: inherit !important;
       }
 
       /* headings + sections */
@@ -161,7 +187,6 @@
         height: auto;
         flex-shrink: 0;
       }
-
       @media (min-width: 900px) {
         .values-section {
           grid-template-columns: repeat(2, 1fr);
@@ -204,7 +229,6 @@
         color: #2d6a4f;
         text-decoration: underline;
       }
-
       @media (min-width: 900px) {
         .news-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -234,14 +258,13 @@
         height: auto;
         border-radius: 8px;
       }
-
       @media (min-width: 900px) {
         .programs-grid {
           grid-template-columns: repeat(3, 1fr);
         }
       }
 
-      /* --- Volunteer Cards (Get Involved / Invest) --- */
+      /* --- Volunteer Cards --- */
       .card {
         max-width: 900px;
         margin: 0 auto 16px;
@@ -311,7 +334,7 @@
         color: #ffffff;
       }
 
-      /* Prevent any rogue widths/heights from inline attributes */
+      /* enforce icon sizes if inline attrs exist */
       .social-media-icons img[width],
       .social-media-icons img[height] {
         width: 28px !important;
@@ -381,7 +404,6 @@
         <li>
           <a href="#">Volunteer</a>
           <ul class="dropdown">
-            <!-- These now scroll to in-page sections -->
             <li><a href="#get-involved">Get Involved</a></li>
             <li><a href="#invest">Invest</a></li>
           </ul>
@@ -419,26 +441,26 @@
     <h2 class="montserrat"><u>OUR VALUES</u></h2>
     <section class="values-section">
       <div class="value-box">
-        <img class="value-box-icon" src="images/value1.png" alt="Values" />
-        A shared sense of caring, respect and responsibility for our community
+        <img class="value-box-icon" src="images/value1.png" alt="Values" />A
+        shared sense of caring, respect and responsibility for our community
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value2.png" alt="Values" />
-        A commitment to be responsive to the needs and aspirations of our
+        <img class="value-box-icon" src="images/value2.png" alt="Values" />A
+        commitment to be responsive to the needs and aspirations of our
         community
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value3.png" alt="Values" />
-        A commitment to celebrating and reflecting our community’s richness
+        <img class="value-box-icon" src="images/value3.png" alt="Values" />A
+        commitment to celebrating and reflecting our community’s richness
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value4.png" alt="Values" />
-        A dedication to sustainable practices and to minimizing our
-        environmental impact
+        <img class="value-box-icon" src="images/value4.png" alt="Values" />A
+        dedication to sustainable practices and to minimizing our environmental
+        impact
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value5.png" alt="Values" />
-        A strong appreciation for creativity, humor and fun!
+        <img class="value-box-icon" src="images/value5.png" alt="Values" />A
+        strong appreciation for creativity, humor and fun!
       </div>
     </section>
 
@@ -500,8 +522,7 @@
           <h2>Local Produce Home Delivery</h2>
           <img src="images/homedeliveryproduce.png" alt="Delivery" />
           <p>
-            <b>Local produce delivery for all!</b>
-            <br /><br />
+            <b>Local produce delivery for all!</b><br /><br />
             <a href="programs/producehomedeliverypickup.html"
               >Enjoy nourishing local produce...</a
             >
@@ -511,8 +532,7 @@
           <h2>Mobile and Farmers Markets</h2>
           <img src="images/smallfarmersmarket.jpg" alt="Farmer's Market" />
           <p>
-            <b>Shop and explore our region’s seasonal best!</b>
-            <br /><br />
+            <b>Shop and explore our region’s seasonal best!</b><br /><br />
             <a href="programs/mobilemarkets.html">Check our calendar...</a>
           </p>
         </div>
@@ -520,8 +540,7 @@
           <h2>Greening the Gateway Cities</h2>
           <img src="images/greeninggateway.png" alt="Greening" />
           <p>
-            <b>Free shade trees in Leominster and Fitchburg</b>
-            <br /><br />
+            <b>Free shade trees in Leominster and Fitchburg</b><br /><br />
             <a href="programs/greeninggatewaycities.html">Find out more...</a>
           </p>
         </div>
@@ -530,7 +549,7 @@
 
     <hr class="gradient-hr" />
 
-    <!-- This is the in-page screen for Volunteer → Get Involved -->
+    <!-- Volunteer sections -->
     <section id="get-involved" class="card">
       <h2>Get Involved</h2>
       <p>
@@ -545,7 +564,6 @@
       <a class="cta" href="mailto:info@growingplaces.org">Sign Up</a>
     </section>
 
-    <!-- This is the in-page screen for Volunteer → Invest -->
     <section id="invest" class="card">
       <h2>Invest</h2>
       <p>
