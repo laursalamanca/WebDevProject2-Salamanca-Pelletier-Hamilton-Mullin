@@ -30,32 +30,6 @@
         margin: 0;
       }
 
-      /* This is the navigation bar */
-      nav ul {
-        /* This is putting the links in a row and centering them */
-        list-style: none;
-        margin: 0;
-        padding: 0.5rem;
-        display: flex;
-        gap: 6px; /* This is spacing between links */
-        justify-content: center; /* This is centering the nav */
-        border-bottom: 1px solid var(--gp-border);
-        background: #fff;
-      }
-      nav a {
-        /* This is rounding the edges of the nav links */
-        display: inline-block;
-        padding: 10px 14px;
-        border-radius: 10px;
-        text-decoration: none;
-        color: var(--gp-text);
-      }
-      nav a[aria-current="page"] {
-        /* This is highlighting the active page in green */
-        background: var(--gp-green);
-        color: #fff;
-      }
-
       /* This is the big header section (hero) at the top */
       header.hero {
         background: var(--gp-sky);
@@ -115,41 +89,68 @@
         font-size: 0.9rem;
         color: var(--gp-muted);
       }
-
-      /* This is the footer at the bottom */
-      footer {
-        margin: 48px 0 24px;
-        text-align: center;
-        color: var(--gp-muted);
-      }
     </style>
   </head>
   <body>
+    <header class="site-banner">
+      <div class="banner-brand">
+        <div class="logo-block">
+          <img
+            src="../images/growingplaces.png"
+            alt="Growing Places logo"
+            class="banner-logo"
+          />
+          <p class="tagline">
+            <em>Connecting community through real food since 2001</em>
+          </p>
+        </div>
+      </div>
+    </header>
+
     <!-- This is the navigation bar -->
-    <nav aria-label="Primary">
+    <nav>
       <ul>
-        <!-- This is the Home link back to the root index -->
-        <li><a href="../index.html">Home</a></li>
-
-        <!-- This is the Programs dropdown equivalent (flat for this page) -->
+        <li><a href="index.html">Home</a></li>
         <li>
-          <a href="producehomedeliverypickup.html"
-            >Produce Home Delivery &amp; Pick-Up</a
-          >
+          <a href="#">About</a>
+          <ul class="dropdown">
+            <li><a href="../about/impact.html">Impact</a></li>
+            <li><a href="../about/ourteam.html">Our Team</a></li>
+            <li><a href="../about/ourboard.html">Our Board</a></li>
+            <li>
+              <a href="../about/businessesfoundations.html"
+                >Businesses and Foundations</a
+              >
+            </li>
+            <li><a href="../about/contactus.html">Contact Us</a></li>
+            <li><a href="../about/joinourteam.html">Join Our Team</a></li>
+          </ul>
         </li>
-        <li><a href="mobilemarkets.html">Mobile Market</a></li>
-
-        <!-- This is the Farmers Markets link (same folder, plural filename) -->
-        <li><a href="farmersmarkets.html">Farmers Markets</a></li>
-
-        <!-- This is the current page link highlighted -->
         <li>
-          <a aria-current="page" href="greeninggatewaycities.html"
-            >Greening the Gateway Cities</a
-          >
+          <a href="#">Programs</a>
+          <ul class="dropdown">
+            <li>
+              <a href="producehomedeliverypickup.html"
+                >Produce Home Delivery & Pick-Up</a
+              >
+            </li>
+            <li><a href="mobilemarkets.html">Mobile Market</a></li>
+            <li><a href="farmersmarkets.html">Farmers Markets</a></li>
+            <li>
+              <a href="greeninggatewaycities.html"
+                >Greening the Gateway Cities</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Volunteer</a>
+          <ul class="dropdown">
+            <li><a href="../volunteer/getinvolved.html">Get Involved</a></li>
+            <li><a href="../volunteer/invest.html">Invest</a></li>
+          </ul>
         </li>
 
-        <!-- This is the Donate link back at the root -->
         <li><a href="../donate.html">Donate</a></li>
       </ul>
     </nav>
@@ -251,6 +252,38 @@
     </main>
 
     <!-- This is the footer -->
-    <footer>© Growing Places</footer>
+    <footer>
+      <div class="footer-inner">
+        <div class="social-media-container">
+          <div class="social-media-icons">
+            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+              <img
+                src="../images/facebook.png"
+                alt="Facebook Icon"
+                class="social-media-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/growing_places/?hl=en"
+              target="_blank"
+            >
+              <img
+                src="../images/instagram.png"
+                alt="Instagram Icon"
+                class="social-media-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-center">
+        <img
+          src="../images/beetroot.png"
+          alt="Beetroot Icon"
+          style="height: 32px; width: 32px"
+        />
+        <p>&copy; 2025 Growing Places</p>
+      </div>
+    </footer>
   </body>
 </html>
