@@ -34,9 +34,10 @@
         /* This is the base styling for the page: white background, readable font, comfortable line spacing */
         background: #ffffff;
         color: var(--gp-text);
-        font-family: "montserrat", -apple-system, Segoe UI, Roboto, Inter, Arial,
+        font-family: "Montserrat", -apple-system, Segoe UI, Roboto, Inter, Arial,
           sans-serif;
         line-height: 1.5;
+        margin: 0;
       }
 
       /* This is the big header (hero) section at the top of the page */
@@ -122,6 +123,97 @@
         width: 100%;
         max-width: 320px;
       }
+
+      /* This is the accessible/working dropdown nav styling */
+      nav[aria-label="Primary"] ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav[aria-label="Primary"] > ul {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        background: #22442b; /* This is the dark green bar to match your screenshot */
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--gp-border);
+      }
+      nav[aria-label="Primary"] a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        display: inline-block;
+      }
+      nav[aria-label="Primary"] a:hover,
+      nav[aria-label="Primary"] a:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+      }
+      nav[aria-label="Primary"] a[aria-current="page"] {
+        background: var(--gp-green);
+      }
+      nav[aria-label="Primary"] > ul > li {
+        position: relative;
+      }
+      nav .dropdown {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        min-width: 220px;
+        background: #fff;
+        color: var(--gp-text);
+        border: 1px solid var(--gp-border);
+        border-radius: 10px;
+        padding: 8px 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        display: none;
+        z-index: 10;
+      }
+      nav .dropdown a {
+        color: var(--gp-text);
+        display: block;
+        padding: 10px 14px;
+      }
+      nav .dropdown a:hover,
+      nav .dropdown a:focus-visible {
+        background: #f6f8f5;
+      }
+      nav[aria-label="Primary"] li:hover > .dropdown,
+      nav[aria-label="Primary"] li:focus-within > .dropdown {
+        display: block;
+      }
+
+      /* This is ensuring anchor jumps leave room under the nav height */
+      :target {
+        scroll-margin-top: 90px;
+      }
+
+      /* This is the footer style block */
+      footer {
+        margin: 48px 0 24px;
+        color: var(--gp-text);
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: center;
+      }
+      .social-media-icons {
+        display: flex;
+        gap: 12px;
+      }
+      .social-media-icon {
+        height: 24px;
+        width: 24px;
+      }
+      .footer-center {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 8px;
+      }
     </style>
   </head>
   <body>
@@ -142,7 +234,7 @@
     </header>
 
     <!-- This is the main navigation bar -->
-    <nav>
+    <nav aria-label="Primary">
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li>
@@ -165,7 +257,7 @@
           <ul class="dropdown">
             <li>
               <a href="producehomedeliverypickup.html"
-                >Produce Home Delivery & Pick-Up</a
+                >Produce Home Delivery &amp; Pick-Up</a
               >
             </li>
             <li><a href="mobilemarkets.html">Mobile Market</a></li>
@@ -184,8 +276,10 @@
         <li>
           <a href="#">Volunteer</a>
           <ul class="dropdown">
-            <li><a href="../volunteer/getinvolved.html">Get Involved</a></li>
-            <li><a href="../volunteer/invest.html">Invest</a></li>
+            <!-- This is linking to the in-page Get Involved screen -->
+            <li><a href="#get-involved">Get Involved</a></li>
+            <!-- This is linking to the in-page Invest screen -->
+            <li><a href="#invest">Invest</a></li>
           </ul>
         </li>
         <li><a href="../donate.html">Donate</a></li>
@@ -199,7 +293,7 @@
         Fresh, local produce and community—seasonally across North Central MA.
       </p>
       <span class="pill">SNAP/HIP Accepted</span>
-      <span class="pill">WIC & Senior Coupons</span>
+      <span class="pill">WIC &amp; Senior Coupons</span>
     </header>
 
     <!-- This is the main content area -->
@@ -226,7 +320,7 @@
           <ul>
             <li><strong>SNAP + HIP</strong> on eligible produce</li>
             <li>Debit/credit welcome</li>
-            <li>WIC & Senior coupons at select markets</li>
+            <li>WIC &amp; Senior coupons at select markets</li>
           </ul>
           <a
             class="cta secondary"
@@ -274,6 +368,80 @@
             or visit the info table on market day.
           </p>
         </div>
+      </section>
+
+      <!-- This is the in-page screen for Volunteer → Get Involved -->
+      <section
+        id="get-involved"
+        class="card"
+        aria-labelledby="get-involved-title"
+      >
+        <h2 id="get-involved-title">Get Involved</h2>
+        <p>
+          <!-- This is a short intro explaining volunteer options -->
+          Join us at markets, events, and garden builds—no experience required.
+        </p>
+        <div class="grid cols-2">
+          <div>
+            <h3>Ways to Volunteer</h3>
+            <ul>
+              <li>Farmers Market support (info table, setup/teardown)</li>
+              <li>Garden builds and seasonal cleanups</li>
+              <li>Workshop &amp; event assistance</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Group Volunteering</h3>
+            <p>
+              <!-- This is inviting groups/teams to help -->
+              Have a team? We’ll match your group to a project with real impact.
+            </p>
+          </div>
+        </div>
+        <p style="margin-top: 10px">
+          <a
+            class="cta"
+            href="mailto:info@growingplaces.org?subject=Volunteer%20Sign%20Up"
+            >Email to Sign Up</a
+          >
+        </p>
+      </section>
+
+      <!-- This is the in-page screen for Volunteer → Invest -->
+      <section id="invest" class="card" aria-labelledby="invest-title">
+        <h2 id="invest-title">Invest</h2>
+        <p>
+          <!-- This is describing ways to financially support the mission -->
+          Your support powers food access, education, and greener neighborhoods.
+        </p>
+        <div class="grid cols-2">
+          <div>
+            <h3>Give Online</h3>
+            <p>Make a secure one-time or monthly gift in minutes.</p>
+            <p>
+              <a class="cta" href="../donate.html">Donate Now</a>
+            </p>
+          </div>
+          <div>
+            <h3>Other Ways to Invest</h3>
+            <ul>
+              <li>Employer matching gifts</li>
+              <li>In-kind donations (tools, seeds, printing)</li>
+              <li>Tribute gifts to honor someone special</li>
+            </ul>
+            <p>
+              <a
+                class="cta secondary"
+                href="mailto:info@growingplaces.org?subject=Invest%20Inquiry"
+                >Contact Development</a
+              >
+            </p>
+          </div>
+        </div>
+        <p class="note">
+          <!-- This is reminding users they can also learn more on the Donate page -->
+          For mailing address and details, see our Donate page.
+        </p>
       </section>
     </main>
 
