@@ -12,7 +12,319 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Inline fixes (safe + scoped). Keeps images contained and footer icons small. -->
+    <style>
+      /* base */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto,
+          Arial, sans-serif;
+        margin: 0;
+        color: #1f2937;
+        background: #ffffff;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- This is the site banner --- */
+      .site-banner {
+        background: #173c24;
+        padding: 16px 12px;
+        color: #fff;
+      }
+      .banner-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo-block {
+        text-align: center;
+      }
+      .banner-logo {
+        width: 180px;
+        height: auto;
+        margin: 0 auto 8px;
+      }
+      .tagline {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      /* --- This is the main nav --- */
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      nav > ul > li {
+        position: relative;
+      }
+      nav a {
+        display: block;
+        padding: 14px 18px;
+        text-decoration: none;
+        color: #1f2937;
+      }
+      nav a:hover {
+        background: #f6f8f5;
+      }
+      nav .dropdown {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        min-width: 220px;
+        display: none;
+        z-index: 10;
+      }
+      nav li:hover > .dropdown {
+        display: block;
+      }
+      nav .dropdown li a {
+        white-space: nowrap;
+      }
+
+      /* headings + sections */
+      h2.montserrat {
+        text-align: center;
+        margin: 28px 12px 12px;
+      }
+      .gradient-hr {
+        height: 1px;
+        border: 0;
+        margin: 28px 0;
+        background: linear-gradient(90deg, #ffffff, #e5e7eb, #ffffff);
+      }
+
+      /* --- WHO WE ARE --- */
+      .box {
+        padding: 12px;
+      }
+      .box-flex {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .box-text {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .box-text img {
+        width: 72px;
+        margin: 8px 0;
+      }
+      .box-image img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      @media (min-width: 900px) {
+        .box-flex {
+          grid-template-columns: 1.1fr 1fr;
+          align-items: center;
+        }
+      }
+
+      /* --- VALUES --- */
+      .values-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 12px;
+      }
+      .value-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        background: #f9fafb;
+      }
+      .value-box-icon {
+        width: 56px;
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      @media (min-width: 900px) {
+        .values-section {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1200px) {
+        .values-section {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* --- RECENT NEWS --- */
+      .recent-news-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 12px;
+      }
+      .news-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .news-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .news-img {
+        width: 100%;
+        height: auto;
+      }
+      .news-body {
+        padding: 12px;
+      }
+      .news-excerpt {
+        margin: 8px 0 12px;
+      }
+      .news-link {
+        color: #2d6a4f;
+        text-decoration: underline;
+      }
+
+      @media (min-width: 900px) {
+        .news-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* --- PROGRAMS --- */
+      .programs-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 12px;
+      }
+      .programs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .programs-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        padding: 12px;
+      }
+      .programs-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      @media (min-width: 900px) {
+        .programs-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* --- Volunteer Cards (Get Involved / Invest) --- */
+      .card {
+        max-width: 900px;
+        margin: 0 auto 16px;
+        padding: 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .card h2 {
+        margin-top: 0;
+      }
+      .card ul {
+        padding-left: 18px;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 10px 16px;
+        background: #2d6a4f;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+      }
+      .cta:hover {
+        background: #245743;
+      }
+
+      /* --- Footer --- */
+      footer {
+        background: #173c24;
+        padding: 24px 16px;
+        color: #fff;
+        margin-top: 32px;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: center;
+      }
+      .social-media-container {
+        display: flex;
+      }
+      .social-media-icons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .social-media-icons img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
+      .footer-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding-top: 16px;
+      }
+      .footer-center img {
+        width: 60px;
+        height: auto;
+      }
+      footer a {
+        color: #cfe9db;
+      }
+      footer a:hover {
+        color: #ffffff;
+      }
+
+      /* Prevent any rogue widths/heights from inline attributes */
+      .social-media-icons img[width],
+      .social-media-icons img[height] {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      .footer-center img[width],
+      .footer-center img[height] {
+        width: 60px !important;
+        height: auto !important;
+      }
+    </style>
   </head>
+
   <body>
     <!-- This is the site banner -->
     <header class="site-banner">
@@ -54,7 +366,7 @@
           <ul class="dropdown">
             <li>
               <a href="programs/producehomedeliverypickup.html"
-                >Produce Home Delivery & Pick-Up</a
+                >Produce Home Delivery &amp; Pick-Up</a
               >
             </li>
             <li><a href="programs/mobilemarkets.html">Mobile Market</a></li>
@@ -74,7 +386,6 @@
             <li><a href="#invest">Invest</a></li>
           </ul>
         </li>
-
         <li><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
@@ -135,7 +446,7 @@
 
     <!-- RECENT NEWS -->
     <section class="recent-news-section">
-      <h2 class="montserrat"><u>RECENT NEWS & EVENTS</u></h2>
+      <h2 class="montserrat"><u>RECENT NEWS &amp; EVENTS</u></h2>
       <div class="news-grid">
         <article class="news-card">
           <img src="images/thankyou.png" alt="Thank You" class="news-img" />
@@ -229,7 +540,7 @@
       <ul>
         <li>Farmers Market support (info table, setup/teardown)</li>
         <li>Garden builds and seasonal cleanups</li>
-        <li>Workshop & event assistance</li>
+        <li>Workshop &amp; event assistance</li>
       </ul>
       <a class="cta" href="mailto:info@growingplaces.org">Sign Up</a>
     </section>
@@ -248,10 +559,18 @@
       <div class="footer-inner">
         <div class="social-media-container">
           <div class="social-media-icons">
-            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+            <a
+              href="https://www.facebook.com/GrowingPlaces/"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <img src="images/facebook.png" alt="Facebook" />
             </a>
-            <a href="https://www.instagram.com/growing_places/" target="_blank">
+            <a
+              href="https://www.instagram.com/growing_places/"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <img src="images/instagram.png" alt="Instagram" />
             </a>
           </div>
