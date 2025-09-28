@@ -8,6 +8,13 @@
     <!-- This is the link to the main stylesheet (root-level) -->
     <link rel="stylesheet" href="../style.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       :root {
         /* This is where we define color variables and border radius so we can reuse them easily */
@@ -24,7 +31,7 @@
         /* This is the main body style: white background, dark text, and a clean font */
         background: #ffffff;
         color: var(--gp-text);
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial,
+        font-family: "montserrat", -apple-system, Segoe UI, Roboto, Inter, Arial,
           sans-serif;
         line-height: 1.6;
         margin: 0;
@@ -66,6 +73,7 @@
         border-radius: var(--radius);
         padding: 22px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        margin: 18px 0;
       }
 
       /* This is the button (call to action) style */
@@ -110,7 +118,7 @@
     <!-- This is the navigation bar -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li>
           <a href="#">About</a>
           <ul class="dropdown">
