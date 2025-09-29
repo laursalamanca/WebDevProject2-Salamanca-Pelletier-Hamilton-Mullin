@@ -6,6 +6,11 @@ Original Website: https://growingplaces.org/
 
 ## **List of Improvements**
 
+**Overall Improvements**
+
+- Added a more appealing banner and dropdown
+- Added more eye catching headers to each page instead of the small preexisting ones
+
 **Home Page**
 
 - Decreased the size of the banner on the home page, so it does not take up the whole screen
@@ -23,3 +28,43 @@ Original Website: https://growingplaces.org/
 - Made the mission statement “pop” more
 - Listed goals and strategies in a more appealing way and added check boxes instead of bullets
 - Shrunk the picture of the annual report image as it was too large
+
+**Businesses and Foundations Page**
+
+- Include links to the different foundations and businesses that support Growing Places so people can learn more about what are supporting theme
+
+**Contact Us**
+
+- Added an interactive form box to have users join a mailing list by filling out their name,
+  phone number, and email
+
+**Join Our Team Page**
+
+-
+
+- **Produce Home Delivery & Pickup Page**
+
+- Added pictures for credit card and calendar
+- Made text "pop" more inside a text box
+
+**Mobile Markets Page**
+
+- Made the text pop more
+- Added another picture of the mobile markets
+
+**Farmers Markets Page**
+
+- Made a more appealing layout
+-
+
+## **Greening the Gateway Cities Page**
+
+## **Get Involved Page**
+
+**Invest Page**
+
+- **Donate Page**
+
+- Made a more appealing layout
+- Made the donate button fit in with the color scheme and put it inside of a box instead of having it float outside in a random spot
+- Removed irrelevant picture

@@ -8,6 +8,13 @@
     <!-- This is the link to the main stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       :root {
         /* This is where we define color variables and radius so we can reuse them in styles */
@@ -26,42 +33,6 @@
         font-family: system-ui, -apple-system, Segoe UI, Ro boto, Inter, Arial,
           sans-serif;
         margin: 0;
-      }
-
-      /* This is the navigation bar */
-      nav ul {
-        display: flex; /* This is putting the links in a row */
-        gap: 6px; /* This is spacing between each link */
-        justify-content: center; /* This is centering the links */
-        border-bottom: 1px solid var(--gp-border);
-        list-style: none;
-        margin: 0;
-        padding: 0.5rem;
-        background: #fff;
-      }
-      nav a {
-        border-radius: 10px; /* This is rounding the edges of nav links */
-        text-decoration: none;
-        color: var(--gp-text);
-        padding: 10px 14px;
-        display: inline-block;
-      }
-      nav a[aria-current="page"] {
-        background: var(
-          --gp-green
-        ); /* This is highlighting the active page link */
-        color: #fff;
-      }
-
-      /* This is the big hero banner at the top */
-      header.hero {
-        background: var(--gp-warm);
-        padding: 64px 24px;
-        text-align: center;
-      }
-      .hero h1 {
-        margin: 0 0 10px;
-        font-size: 2.4rem;
       }
 
       /* This is the main content container that centers everything */
@@ -114,34 +85,69 @@
         font-style: normal;
         line-height: 1.6;
       }
-
-      /* This is the footer at the very bottom of the page */
-      footer {
-        margin: 48px 0 24px;
-        text-align: center;
-        color: var(--gp-muted);
-      }
     </style>
   </head>
   <body>
-    <!-- This is the navigation bar -->
+    <header class="site-banner">
+      <div class="banner-brand">
+        <div class="logo-block">
+          <img
+            src="/images/growingplaces.png"
+            alt="Growing Places logo"
+            class="banner-logo"
+          />
+          <p class="tagline">
+            <em>Connecting community through real food since 2001</em>
+          </p>
+        </div>
+      </div>
+    </header>
     <nav>
       <ul>
-        <!-- This is the Home link -->
         <li><a href="index.html">Home</a></li>
-
-        <!-- This is the Farmers Markets link (plural + programs folder) -->
-        <li><a href="programs/farmersmarkets.html">Farmers Markets</a></li>
-
-        <!-- This is the Greening the Gateway Cities link -->
         <li>
-          <a href="programs/greeninggatewaycities.html"
-            >Greening the Gateway Cities</a
-          >
+          <a href="#">About</a>
+          <ul class="dropdown">
+            <li><a href="about/impact.html">Impact</a></li>
+            <li><a href="about/ourteam.html">Our Team</a></li>
+            <li><a href="about/ourboard.html">Our Board</a></li>
+            <li>
+              <a href="about/businessesfoundations.html"
+                >Businesses and Foundations</a
+              >
+            </li>
+            <li><a href="about/contactus.html">Contact Us</a></li>
+            <li><a href="about/joinourteam.html">Join Our Team</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Programs</a>
+          <ul class="dropdown">
+            <li>
+              <a href="programs/producehomedeliverypickup.html"
+                >Produce Home Delivery & Pick-Up</a
+              >
+            </li>
+            <li><a href="programs/mobilemarkets.html">Mobile Market</a></li>
+            <li>
+              <a href="programs/farmersmarkets.html">Farmers Markets</a>
+            </li>
+            <li>
+              <a href="programs/greeninggatewaycities.html"
+                >Greening the Gateway Cities</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Volunteer</a>
+          <ul class="dropdown">
+            <li><a href="volunteer/getinvolved.html">Get Involved</a></li>
+            <li><a href="volunteer/invest.html">Invest</a></li>
+          </ul>
         </li>
 
-        <!-- This is the Donate link (active page) -->
-        <li><a aria-current="page" href="donate.html">Donate</a></li>
+        <li><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
 
@@ -152,6 +158,8 @@
         Your gift powers food access, education, and greener neighborhoods
         across North Central MA.
       </p>
+      <span class="pill">Give Back </span>
+      <span class="pill">Support Local Communities</span>
     </header>
 
     <!-- This is the main content -->
@@ -167,8 +175,8 @@
           >Donate Now</a
         >
         <p class="note">
-          This is a note showing that the wording/layout is inspired by GP’s
-          donate section.
+          Anything helps! Most gifts are between $25-$100. We appreciate your
+          support.
         </p>
       </section>
 
@@ -187,31 +195,61 @@
         <div class="card">
           <h2>Mail a Check</h2>
           <p>
-            This is explaining that people can mail a check and should include
-            their info.
+            Prefer to give by mail? You can send a check directly to our PO Box.
+            Please include your name and contact information so we can send a
+            receipt and thank-you note.
           </p>
           <address>
             Growing Places<br />
             PO Box 123<br />
             North Central, MA 00000
           </address>
-          <p class="note">
-            This is reminding you to swap in the organization’s real address.
-          </p>
         </div>
       </section>
 
       <section class="card">
         <h2>Questions?</h2>
         <p>
-          This is giving an email so donors can ask about receipts, matching, or
-          in-kind gifts:
+          Have questions about donations, volunteering, or programs? Reach out
+          to us anytime! Email us at
           <a href="mailto:info@growingplaces.org">info@growingplaces.org</a>.
         </p>
       </section>
     </main>
 
-    <!-- This is the footer -->
-    <footer>© Growing Places</footer>
+    <!-- Footer-->
+    <footer>
+      <div class="footer-inner">
+        <div class="social-media-container">
+          <div class="social-media-icons">
+            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+              <img
+                src="images/facebook.png"
+                alt="Facebook Icon"
+                class="social-media-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/growing_places/?hl=en"
+              target="_blank"
+            >
+              <img
+                src="images/instagram.png"
+                alt="Instagram Icon"
+                class="social-media-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-center">
+        <img
+          src="images/beetroot.png"
+          alt="Beetroot Icon"
+          style="height: 32px; width: 32px"
+        />
+        <p>&copy; 2025 Growing Places</p>
+      </div>
+    </footer>
   </body>
 </html>
