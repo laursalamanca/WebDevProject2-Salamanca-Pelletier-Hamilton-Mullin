@@ -12,344 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Inline fixes scoped to the homepage nav/dropdowns -->
-    <style>
-      /* base */
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto,
-          Arial, sans-serif;
-        margin: 0;
-        color: #1f2937;
-        background: #ffffff;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-
-      /* --- This is the site banner --- */
-      .site-banner {
-        background: #173c24;
-        padding: 16px 12px;
-        color: #fff;
-      }
-      .banner-brand {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .logo-block {
-        text-align: center;
-      }
-      .banner-logo {
-        width: 180px;
-        height: auto;
-        margin: 0 auto 8px;
-      }
-      .tagline {
-        margin: 0;
-        font-size: 0.95rem;
-        opacity: 0.9;
-      }
-
-      /* --- NAV (homepage-scoped) --- */
-      nav {
-        position: relative;
-        z-index: 100;
-      }
-      nav * {
-        font-family: "Montserrat", Verdana, sans-serif;
-      }
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-        border-bottom: 1px solid #e5e7eb;
-        overflow: visible; /* let dropdowns extend */
-      }
-      nav > ul > li {
-        position: relative;
-      }
-      nav > ul > li > a {
-        display: block;
-        padding: 14px 18px;
-        text-decoration: none;
-        color: #fff; /* keep top links white on your green bar */
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      /* DROPDOWN: make wide enough, prevent wrapping, ensure contrast */
-      nav > ul > li > ul.dropdown {
-        position: absolute;
-        left: 0;
-        top: 100%;
-        background: #234425; /* your dark green */
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        width: max-content; /* grow to the longest item */
-        min-width: 420px; /* fits: "Produce Home Delivery & Pick-Up" */
-        max-width: calc(100vw - 32px); /* never overflow the viewport */
-        white-space: nowrap; /* keep each item on one line */
-        display: none;
-        z-index: 1000;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-      }
-      nav li:hover > ul.dropdown {
-        display: block;
-      }
-
-      /* dropdown items */
-      nav > ul > li > ul.dropdown > li > a {
-        display: block;
-        padding: 14px 18px;
-        color: #ffffff !important; /* readable on dark bg */
-        font-weight: 700;
-        text-decoration: none;
-      }
-      /* highlight on hover without resizing (prevents clipping) */
-      nav > ul > li > ul.dropdown > li > a:hover {
-        background: rgba(255, 255, 255, 0.08);
-        color: #cfe9db !important;
-        transform: none !important;
-        font-size: inherit !important;
-      }
-
-      /* headings + sections */
-      h2.montserrat {
-        text-align: center;
-        margin: 28px 12px 12px;
-      }
-      .gradient-hr {
-        height: 1px;
-        border: 0;
-        margin: 28px 0;
-        background: linear-gradient(90deg, #ffffff, #e5e7eb, #ffffff);
-      }
-
-      /* --- WHO WE ARE --- */
-      .box {
-        padding: 12px;
-      }
-      .box-flex {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-        max-width: 1100px;
-        margin: 0 auto;
-      }
-      .box-text {
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      .box-text img {
-        width: 72px;
-        margin: 8px 0;
-      }
-      .box-image img {
-        width: 100%;
-        border-radius: 8px;
-      }
-      @media (min-width: 900px) {
-        .box-flex {
-          grid-template-columns: 1.1fr 1fr;
-          align-items: center;
-        }
-      }
-
-      /* --- VALUES --- */
-      .values-section {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 12px;
-      }
-      .value-box {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 12px;
-        border: 1px solid #e5e7eb;
-        border-radius: 10px;
-        background: #f9fafb;
-      }
-      .value-box-icon {
-        width: 56px;
-        height: auto;
-        flex-shrink: 0;
-      }
-      @media (min-width: 900px) {
-        .values-section {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (min-width: 1200px) {
-        .values-section {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      /* --- RECENT NEWS --- */
-      .recent-news-section {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 12px;
-      }
-      .news-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .news-card {
-        border: 1px solid #e5e7eb;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #fff;
-      }
-      .news-img {
-        width: 100%;
-        height: auto;
-      }
-      .news-body {
-        padding: 12px;
-      }
-      .news-excerpt {
-        margin: 8px 0 12px;
-      }
-      .news-link {
-        color: #2d6a4f;
-        text-decoration: underline;
-      }
-      @media (min-width: 900px) {
-        .news-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      /* --- PROGRAMS --- */
-      .programs-section {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 12px;
-      }
-      .programs-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .programs-card {
-        border: 1px solid #e5e7eb;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #fff;
-        padding: 12px;
-      }
-      .programs-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-      }
-      @media (min-width: 900px) {
-        .programs-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      /* --- Volunteer Cards --- */
-      .card {
-        max-width: 900px;
-        margin: 0 auto 16px;
-        padding: 16px;
-        border: 1px solid #e5e7eb;
-        border-radius: 12px;
-        background: #fff;
-      }
-      .card h2 {
-        margin-top: 0;
-      }
-      .card ul {
-        padding-left: 18px;
-      }
-      .cta {
-        display: inline-block;
-        margin-top: 8px;
-        padding: 10px 16px;
-        background: #2d6a4f;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 8px;
-      }
-      .cta:hover {
-        background: #245743;
-      }
-
-      /* --- Footer --- */
-      footer {
-        background: #173c24;
-        padding: 24px 16px;
-        color: #fff;
-        margin-top: 32px;
-      }
-      .footer-inner {
-        display: flex;
-        justify-content: center;
-      }
-      .social-media-container {
-        display: flex;
-      }
-      .social-media-icons {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-      }
-      .social-media-icons img {
-        width: 28px;
-        height: 28px;
-        object-fit: contain;
-      }
-      .footer-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding-top: 16px;
-      }
-      .footer-center img {
-        width: 60px;
-        height: auto;
-      }
-      footer a {
-        color: #cfe9db;
-      }
-      footer a:hover {
-        color: #ffffff;
-      }
-
-      /* enforce icon sizes if inline attrs exist */
-      .social-media-icons img[width],
-      .social-media-icons img[height] {
-        width: 28px !important;
-        height: 28px !important;
-      }
-      .footer-center img[width],
-      .footer-center img[height] {
-        width: 60px !important;
-        height: auto !important;
-      }
-    </style>
   </head>
-
   <body>
-    <!-- This is the site banner -->
     <header class="site-banner">
       <div class="banner-brand">
         <div class="logo-block">
@@ -365,7 +29,6 @@
       </div>
     </header>
 
-    <!-- This is the main nav -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -389,7 +52,7 @@
           <ul class="dropdown">
             <li>
               <a href="programs/producehomedeliverypickup.html"
-                >Produce Home Delivery &amp; Pick-Up</a
+                >Produce Home Delivery & Pick-Up</a
               >
             </li>
             <li><a href="programs/mobilemarkets.html">Mobile Market</a></li>
@@ -404,16 +67,25 @@
         <li>
           <a href="#">Volunteer</a>
           <ul class="dropdown">
-            <li><a href="#get-involved">Get Involved</a></li>
-            <li><a href="#invest">Invest</a></li>
+            <li><a href="volunteer/getinvolved.html">Get Involved</a></li>
+            <li><a href="volunteer/invest.html">Invest</a></li>
           </ul>
         </li>
+
         <li><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
 
-    <!-- WHO WE ARE -->
-    <h2 class="montserrat"><u>WHO WE ARE AT GROWING PLACES</u></h2>
+    <header class="hero">
+      <h1>Who We Are at Growing Places</h1>
+      <p>
+        Welcome! Discover who we are and how we grow community through real
+        food.
+      </p>
+      <span class="pill">Non-Profit Organization</span>
+      <span class="pill">Serving Local Communities</span>
+    </header>
+
     <section class="box">
       <div class="box-flex">
         <div class="box-text">
@@ -437,38 +109,61 @@
 
     <hr class="gradient-hr" />
 
-    <!-- VALUES -->
     <h2 class="montserrat"><u>OUR VALUES</u></h2>
+
     <section class="values-section">
       <div class="value-box">
-        <img class="value-box-icon" src="images/value1.png" alt="Values" />A
-        shared sense of caring, respect and responsibility for our community
+        <img
+          class="value-box-icon"
+          src="images/value1.png"
+          alt="Values"
+          class="values-img"
+        />
+        A shared sense of caring, respect and responsibility for our community
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value2.png" alt="Values" />A
-        commitment to be responsive to the needs and aspirations of our
+        <img
+          class="value-box-icon"
+          src="images/value2.png"
+          alt="Values"
+          class="values-img"
+        />
+        A commitment to be responsive to the needs and aspirations of our
         community
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value3.png" alt="Values" />A
-        commitment to celebrating and reflecting our community’s richness
+        <img
+          class="value-box-icon"
+          src="images/value3.png"
+          alt="Values"
+          class="values-img"
+        />
+        A commitment to celebrating and reflecting our community’s richness
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value4.png" alt="Values" />A
-        dedication to sustainable practices and to minimizing our environmental
-        impact
+        <img
+          class="value-box-icon"
+          src="images/value4.png"
+          alt="Values"
+          class="values-img"
+        />
+        A dedication to sustainable practices and to minimizing our
+        environmental impact
       </div>
       <div class="value-box">
-        <img class="value-box-icon" src="images/value5.png" alt="Values" />A
-        strong appreciation for creativity, humor and fun!
+        <img
+          class="value-box-icon"
+          src="images/value5.png"
+          alt="Values"
+          class="values-img"
+        />
+        A strong appreciation for creativity, humor and fun!
       </div>
     </section>
-
     <hr class="gradient-hr" />
-
-    <!-- RECENT NEWS -->
+    <!-- Recent News Section -->
     <section class="recent-news-section">
-      <h2 class="montserrat"><u>RECENT NEWS &amp; EVENTS</u></h2>
+      <h2 class="montserrat"><u>RECENT NEWS & EVENTS</u></h2>
       <div class="news-grid">
         <article class="news-card">
           <img src="images/thankyou.png" alt="Thank You" class="news-img" />
@@ -480,8 +175,8 @@
               Brewery Event!
             </p>
             <a
-              href="https://www.instagram.com/p/DO9IYyTgPRz/"
-              target="_blank"
+              href="https://www.instagram.com/p/DO9IYyTgPRz/?utm_source=ig_web_copy_link&igsh=MWZxZ2h4YmZpdm9ncw=="
+              target="_blank;"
               class="news-link"
               >Read more</a
             >
@@ -491,6 +186,7 @@
         <article class="news-card">
           <img
             src="images/honeymarket.png"
+            alt="Members at the event"
             alt="Honey Market"
             class="news-img"
           />
@@ -502,9 +198,9 @@
               October Markets.
             </p>
             <a
-              href="https://www.instagram.com/p/DO_dYbDjpqK/"
-              target="_blank"
+              href="https://www.instagram.com/p/DO_dYbDjpqK/?utm_source=ig_web_copy_link&igsh=N3RmZWZlcWI3aHF3"
               class="news-link"
+              target="_blank;"
               >Read more</a
             >
           </div>
@@ -514,34 +210,63 @@
 
     <hr class="gradient-hr" />
 
-    <!-- PROGRAMS -->
     <section class="programs-section">
       <h2 class="montserrat"><u>PROGRAMS</u></h2>
       <div class="programs-grid">
         <div class="programs-card">
           <h2>Local Produce Home Delivery</h2>
-          <img src="images/homedeliveryproduce.png" alt="Delivery" />
+          <img
+            class="programs-img"
+            src="images/homedeliveryproduce.png"
+            alt="Delivery"
+          />
           <p>
-            <b>Local produce delivery for all!</b><br /><br />
-            <a href="programs/producehomedeliverypickup.html"
-              >Enjoy nourishing local produce...</a
-            >
+            <b>Local produce delivery for all!</b>
+            <br />
+            <br />
+            <a
+              href="../programs/producehomedeliverypickup.html"
+              style="color: black; text-decoration: underline"
+              >Enjoy nourishing local produce and support our NCMA farmers with
+              your SNAP/HIP-eligible share all year long.
+            </a>
           </p>
         </div>
         <div class="programs-card">
           <h2>Mobile and Farmers Markets</h2>
-          <img src="images/smallfarmersmarket.jpg" alt="Farmer's Market" />
+          <img
+            class="programs-img"
+            src="images/smallfarmersmarket.jpg"
+            alt="Farmer's Market"
+          />
           <p>
-            <b>Shop and explore our region’s seasonal best!</b><br /><br />
-            <a href="programs/mobilemarkets.html">Check our calendar...</a>
+            <b>Shop and explore our region’s seasonal best!</b>
+            <br />
+            <br />
+            <a
+              href="../programs/mobilemarkets.html"
+              style="color: black; text-decoration: underline"
+              >Check our calendar for this season’s mobile stops and farmers
+              market events.
+            </a>
           </p>
         </div>
         <div class="programs-card">
           <h2>Greening the Gateway Cities</h2>
-          <img src="images/greeninggateway.png" alt="Greening" />
+          <img
+            class="programs-img"
+            src="images/greeninggateway.png"
+            alt="Greening The Gateway Cities"
+          />
           <p>
-            <b>Free shade trees in Leominster and Fitchburg</b><br /><br />
-            <a href="programs/greeninggatewaycities.html">Find out more...</a>
+            <b>Free shade trees in Leominster and Fitchburg</b>
+            <br />
+            <br />
+            <a
+              href="../programs/greeninggatewaycities.html"
+              style="color: black; text-decoration: underline"
+              >Find out if you’re in the expanded planting zone!</a
+            >
           </p>
         </div>
       </div>
@@ -550,52 +275,83 @@
     <hr class="gradient-hr" />
 
     <!-- Volunteer sections -->
-    <section id="get-involved" class="card">
-      <h2>Get Involved</h2>
-      <p>
+    <section
+      id="get-involved"
+      class="card"
+      style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+    >
+      <h2 class="montserrat"><u> Get Involved</u></h2>
+      <p style="font-family: 'montserrat', Verdanna, sans-serif">
         Volunteers are the heart of Growing Places. Join us at markets, events,
         and garden builds—no experience required!
       </p>
       <ul>
-        <li>Farmers Market support (info table, setup/teardown)</li>
-        <li>Garden builds and seasonal cleanups</li>
-        <li>Workshop &amp; event assistance</li>
+        <li style="font-family: 'montserrat', Verdanna, sans-serif">
+          Farmers Market support (info table, setup/teardown)
+        </li>
+        <li style="font-family: 'montserrat', Verdanna, sans-serif">
+          Garden builds and seasonal cleanups
+        </li>
+        <li style="font-family: 'montserrat', Verdanna, sans-serif">
+          Workshop &amp; event assistance
+        </li>
       </ul>
-      <a class="cta" href="mailto:info@growingplaces.org">Sign Up</a>
+      <a
+        class="cta"
+        href="mailto:info@growingplaces.org"
+        style="font-family: 'montserrat', Verdanna, sans-serif"
+        >Sign Up</a
+      >
     </section>
 
-    <section id="invest" class="card">
-      <h2>Invest</h2>
-      <p>
+    <section
+      id="invest"
+      class="card"
+      style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+    >
+      <h2 class="montserrat"><u>Invest</u></h2>
+      <p style="font-family: 'montserrat', Verdanna, sans-serif">
         Your support powers food access, education, and greener neighborhoods.
       </p>
-      <a class="cta" href="donate.html">Donate Now</a>
+      <a
+        class="cta"
+        href="donate.html"
+        style="font-family: 'montserrat', Verdanna, sans-serif"
+        >Donate Now</a
+      >
     </section>
 
-    <!-- Footer -->
+    <!-- Footer-->
     <footer>
       <div class="footer-inner">
         <div class="social-media-container">
           <div class="social-media-icons">
-            <a
-              href="https://www.facebook.com/GrowingPlaces/"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <img src="images/facebook.png" alt="Facebook" />
+            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+              <img
+                src="images/facebook.png"
+                alt="Facebook Icon"
+                class="social-media-icon"
+              />
             </a>
             <a
-              href="https://www.instagram.com/growing_places/"
+              href="https://www.instagram.com/growing_places/?hl=en"
               target="_blank"
-              aria-label="Instagram"
             >
-              <img src="images/instagram.png" alt="Instagram" />
+              <img
+                src="images/instagram.png"
+                alt="Instagram Icon"
+                class="social-media-icon"
+              />
             </a>
           </div>
         </div>
       </div>
       <div class="footer-center">
-        <img src="images/beetroot.png" alt="Beetroot" />
+        <img
+          src="images/beetroot.png"
+          alt="Beetroot Icon"
+          style="height: 32px; width: 32px"
+        />
         <p>&copy; 2025 Growing Places</p>
       </div>
     </footer>

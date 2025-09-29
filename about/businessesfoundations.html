@@ -12,6 +12,14 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      ul li a {
+        color: #2d6a4f;
+        text-decoration: underline;
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <header class="site-banner">
@@ -78,12 +86,15 @@
     </nav>
 
     <main>
-      <h2>Sponsors</h2>
-      <h3>
+      <header class="hero">
+        <h1>Our Sponsors</h1>
+        <p>Thank you to our generous supporters!</p>
+      </header>
+      <h3 style="font-family: 'Montserrat', sans-serif; text-align: center">
         The different businesses and groups that kindly give their to support to
-        Growing Places
+        Growing Places!
       </h3>
-      <ul>
+      <ul style="position: relative; left: 500px">
         <ul>
           <li>
             <a
@@ -296,5 +307,40 @@
         </ul>
       </ul>
     </main>
+
+    <!-- Footer-->
+    <footer>
+      <div class="footer-inner">
+        <div class="social-media-container">
+          <div class="social-media-icons">
+            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+              <img
+                src="../images/facebook.png"
+                alt="Facebook Icon"
+                class="social-media-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/growing_places/?hl=en"
+              target="_blank"
+            >
+              <img
+                src="../images/instagram.png"
+                alt="Instagram Icon"
+                class="social-media-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-center">
+        <img
+          src="../images/beetroot.png"
+          alt="Beetroot Icon"
+          style="height: 32px; width: 32px"
+        />
+        <p>&copy; 2025 Growing Places</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -23,16 +23,18 @@
       }
       .contact-info {
         margin-bottom: 40px;
+        text-align: center;
       }
       .section {
         margin-bottom: 20px;
       }
       form {
         margin-top: 10px;
-        padding: 15px;
+        padding: 20px;
         border: 1px solid #ccc;
         border-radius: 8px;
         max-width: 400px;
+        box-sizing: border-box;
       }
       form label {
         display: block;
@@ -40,7 +42,7 @@
         font-weight: bold;
       }
       form input {
-        width: 100%;
+        width: 95%;
         padding: 8px;
         margin-bottom: 12px;
         border: 1px solid #aaa;
@@ -56,6 +58,10 @@
       }
       form button:hover {
         background: #005bb5;
+      }
+
+      .mailing-list {
+        text-align: center;
       }
     </style>
   </head>
@@ -84,25 +90,28 @@
             <li><a href="ourteam.html">Our Team</a></li>
             <li><a href="ourboard.html">Our Board</a></li>
             <li>
-              <a href="about/businessesfoundations.html"
+              <a href="businessesfoundations.html"
                 >Businesses and Foundations</a
               >
             </li>
-            <li><a href="about/contactus.html">Contact Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="joinourteam.html">Join Our Team</a></li>
           </ul>
         </li>
         <li>
           <a href="#">Programs</a>
           <ul class="dropdown">
             <li>
-              <a href="programs/producehomedeliverypickup.html"
+              <a href="../programs/producehomedeliverypickup.html"
                 >Produce Home Delivery & Pick-Up</a
               >
             </li>
-            <li><a href="programs/mobilemarkets.html">Mobile Market</a></li>
-            <li><a href="programs/farmersmarkets.html">Farmers Markets</a></li>
+            <li><a href="../programs/mobilemarkets.html">Mobile Market</a></li>
             <li>
-              <a href="programs/greeninggatewaycities.html"
+              <a href="../programs/farmersmarkets.html">Farmers Markets</a>
+            </li>
+            <li>
+              <a href="../programs/greeninggatewaycities.html"
                 >Greening the Gateway Cities</a
               >
             </li>
@@ -111,15 +120,23 @@
         <li>
           <a href="#">Volunteer</a>
           <ul class="dropdown">
-            <li><a href="volunteer/getinvolved.html">Get Involved</a></li>
-            <li><a href="volunteer/invest.html">Invest</a></li>
+            <li><a href="../volunteer/getinvolved.html">Get Involved</a></li>
+            <li><a href="../volunteer/invest.html">Invest</a></li>
           </ul>
         </li>
 
-        <li><a href="donate.html">Donate</a></li>
+        <li><a href="../donate.html">Donate</a></li>
       </ul>
     </nav>
-    <h2>Contact Us</h2>
+
+    <header class="hero">
+      <h1>Contact Us</h1>
+      <p>Get in touch with us!</p>
+      <span class="pill">Weekly Mailing List</span>
+      <span class="pill">Monthly Newsletter</span>
+    </header>
+
+    <br /><br />
 
     <div class="contact-info">
       <div class="section">
@@ -232,5 +249,42 @@
         });
       })();
     </script>
+
+    <br /><br />
+
+    <!-- Footer-->
+    <footer>
+      <div class="footer-inner">
+        <div class="social-media-container">
+          <div class="social-media-icons">
+            <a href="https://www.facebook.com/GrowingPlaces/" target="_blank">
+              <img
+                src="../images/facebook.png"
+                alt="Facebook Icon"
+                class="social-media-icon"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/growing_places/?hl=en"
+              target="_blank"
+            >
+              <img
+                src="../images/instagram.png"
+                alt="Instagram Icon"
+                class="social-media-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-center">
+        <img
+          src="../images/beetroot.png"
+          alt="Beetroot Icon"
+          style="height: 32px; width: 32px"
+        />
+        <p>&copy; 2025 Growing Places</p>
+      </div>
+    </footer>
   </body>
 </html>
