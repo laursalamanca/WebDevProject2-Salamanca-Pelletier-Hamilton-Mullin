@@ -1,4 +1,4 @@
-# WebDevProject2-Salamanca-Pelletier-Hamilton-Mullin
+# Project2-Group7-Laura-Salamanca-Jack-Pelletier-David-Hamilton-George-Mullin
 
 Group Members: Laura Salamanca (Group Leader), David Hamilton, Jack Pelletier, George Mullin
 
@@ -8,7 +8,8 @@ Original Website: https://growingplaces.org/
 
 **Overall Improvements**
 
-- Added a more appealing banner and dropdown
+- Added a more appealing banner and dropdown navigation bar on all pages
+- Added a nicer footer on all the pages
 - Added more eye catching headers to each page instead of the small preexisting ones
 
 **Home Page**
@@ -31,7 +32,7 @@ Original Website: https://growingplaces.org/
 
 **Businesses and Foundations Page**
 
-- Include links to the different foundations and businesses that support Growing Places so people can learn more about what are supporting theme
+- Included links to the different foundations and businesses that support Growing Places so people can learn more about what are supporting theme
 
 **Contact Us**
 
@@ -40,7 +41,8 @@ Original Website: https://growingplaces.org/
 
 **Join Our Team Page**
 
--
+- Removed unnecessary space between the paragraph text and form
+- Made the text pop more
 
 - **Produce Home Delivery & Pickup Page**
 
@@ -55,13 +57,20 @@ Original Website: https://growingplaces.org/
 **Farmers Markets Page**
 
 - Made a more appealing layout
--
 
 ## **Greening the Gateway Cities Page**
 
+- Made a more appealing layout
+
 ## **Get Involved Page**
 
+- Added more pictures
+- Added a text box to make the text pop at the top
+
 **Invest Page**
+
+- Added text boxes that make the text pop more
+- Added pictures
 
 - **Donate Page**
 

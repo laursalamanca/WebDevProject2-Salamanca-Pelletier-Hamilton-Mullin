@@ -12,6 +12,45 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .opportunites-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        max-width: 1000px;
+        margin: 45px auto;
+        padding: 20px;
+      }
+
+      .volunteer-box {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .volunteer-box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .volunteer-box-icon {
+        width: 280px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 12px;
+      }
+
+      .volunteer-box p,
+      .volunteer-box {
+        font-family: "montserrat", -apple-system, Segoe UI, Roboto, Inter, Arial,
+          sans-serif;
+      }
+    </style>
   </head>
   <body>
     <header class="site-banner">
@@ -100,7 +139,7 @@
         </div>
       </div>
     </section>
-    <h2>HOW CAN YOU HELP?</h2>
+    <h2 class="montserrat"><u>HOW CAN YOU HELP?</u></h2>
 
     <section class="opportunites-section">
       <div class="volunteer-box">
@@ -110,9 +149,10 @@
           alt="Volunteer"
           class="volunteer-img"
         />
-        PRODUCE PACKING: Join our Aggregation Team and help package local
-        farm-fresh produce into 450+ units weekly for donation and home delivery
-        throughout North Central MA!
+        <b>PRODUCE PACKING</b><br />
+        Join our Aggregation Team and help package local farm-fresh produce into
+        450+ units weekly for donation and home delivery throughout North
+        Central MA!
       </div>
       <div class="volunteer-box">
         <img
@@ -121,8 +161,9 @@
           alt="Volunteer"
           class="volunteer-img"
         />
-        DELIVERY: Join our Distribution Team by delivering that produce either
-        in your own vehicle or as ride-along support for our staff.
+        <b>DELIVERY</b><br />
+        Join our Distribution Team by delivering that produce either in your own
+        vehicle or as ride-along support for our staff.
       </div>
 
       <div class="volunteer-box">
@@ -132,12 +173,20 @@
           alt="Volunteer"
           class="volunteer-img"
         />
-        OFFICE: Support our administrative staff in the office on project-based
-        tasks.
+        <b>OFFICE</b><br />
+        Support our administrative staff in the office on project-based tasks.
       </div>
     </section>
 
-    <h3>
+    <h3
+      style="
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 16px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+      "
+    >
       These are just some of the ways that you can lend a hand to Growing Places
       to allows us to operate at top form. To learn more about other
       opportunites, please call 978-598-3723, or view our
